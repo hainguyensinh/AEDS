@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Customers</title>
+<script src="react-vendor.js"></script>
+<script src="dc-lite.js"></script>
+<link rel="stylesheet" href="ds.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>body{margin:0;font-family:Inter,system-ui,sans-serif}</style>
+
+</head>
+<body>
+<template id="dc-tpl">
+
+<div class="app">
+<nav class="side">
+<div class="brand"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="#d8352a" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.8 4.5 6.5 4.5c2 0 3.7 1.1 5.5 3.2 1.8-2.1 3.5-3.2 5.5-3.2 3.7 0 5.600 3.900 4.100 7.300C19.500 16.400 12 21 12 21z"/></svg></span>AEDS</div>
+<a class="nv" href="Main.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Dashboard</a>
+<a class="nv on" href="Customers.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg>Customers</a>
+<a class="nv" href="Sites.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Sites</a>
+<a class="nv" href="Contacts.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Contacts</a>
+<a class="nv" href="Assets.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5-9-10.5C2.600 7 5 4.500 8 4.500c1.800 0 3.200 1 4 2.500.8-1.500 2.200-2.500 4-2.500 3 0 5.400 2.500 5 6C20 16 12 21 12 21z"/></svg>Assets</a>
+<a class="nv" href="Compliance.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Compliance<span class="bd">12,908</span></a>
+<a class="nv" href="Reports.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Reports</a>
+<div class="gl">Admin</div>
+<a class="nv" href="Audit.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Audit log</a>
+<a class="nv" href="People.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.9.3 5.5 2.2 5.5 5.8"/></svg>People</a>
+<a class="nv" href="Models.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>Asset settings</a>
+<a class="nv" href="Merge.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v6a4 4 0 004 4h8M18 14l-3-3M18 14l-3 3M6 20V14"/></svg>Site transfers</a>
+<div class="who"><span class="av">AD</span><div>Sample Admin<small>Administrator</small></div></div>
+</nav>
+<main class="main">
+<div class="top"><label class="search"><input aria-label="Search" placeholder="Search customers, sites, serial numbers"><span class="kbd">/</span></label><span class="role">Role: Administrator</span></div>
+<div class="ph" style="margin-bottom:10px"><div><div class="h1">Customers <span style="color:var(--t3);font-weight:500">(3,732)</span></div></div>
+<div class="acts"><a class="btn" href="Customer-New.dc.html">+ Create customer</a><button class="ibtn" onClick="{{openExport}}" aria-label="Export CSV" title="Export CSV"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg></button></div></div>
+<div class="azl"><template data-sc="for" list="{{letters}}" as="l" hint-placeholder-count="28"><button class="{{l.cls}}" onClick="{{l.pick}}">{{l.label}}</button></template></div>
+<div class="sbx"><div class="grpin"><input aria-label="Search customers" placeholder="Search by name, email, phone or ID"><button>Search</button></div>
+<button class="btnl" onClick="{{toggleAdv}}">{{advLabel}}</button><button class="btnl" onClick="{{openSave}}">Save search</button><button class="btnl" onClick="{{openCols}}">Modify table view</button></div>
+
+<template data-sc="if" value="{{adv}}" hint-placeholder-val="{{ false }}">
+<div class="panel"><div class="fg c4">
+<div class="f"><label for="a2">Company or individual</label><select id="a2" class="fi"><option>Not selected</option><option>Company</option><option>Individual</option></select></div>
+<div class="f"><label for="a3">State</label><select id="a3" class="fi"><option>Not selected</option><option>NSW</option><option>VIC</option><option>QLD</option><option>WA</option></select></div>
+<div class="f"><label for="a5">Compliance</label><select id="a5" class="fi"><option>Not selected</option><option>Past due</option><option>Due in 90 days</option><option>Up to date</option></select></div>
+<div class="f"><label for="a6">Portal access</label><select id="a6" class="fi"><option>Not selected</option><option>Active</option><option>Invited</option><option>Not invited</option></select></div>
+<div class="f"><label for="a7">Created from</label><input id="a7" class="fi" placeholder="dd/mm/yyyy"></div>
+<div class="f"><label for="a8">Created to</label><input id="a8" class="fi" placeholder="dd/mm/yyyy"></div>
+<div class="f" style="grid-column:1/-1"><label class="chk" style="font-size:13px"><input type="checkbox"> Include archived customers</label></div>
+</div>
+<div class="bar"><button class="btn sec" onClick="{{toggleAdv}}">Clear</button><button class="btn" onClick="{{toggleAdv}}">Apply filters</button></div></div>
+</template>
+
+
+
+
+<template data-sc="if" value="{{hasSel}}" hint-placeholder-val="{{ false }}">
+<div class="bulk"><b>{{selCount}} selected</b><span style="flex:1"></span><button class="btn sec sm" onClick="{{openExport}}">Export selected</button><button class="btn sec sm" onClick="{{o_bmap}}">Map customers</button><button class="btn sec sm" onClick="{{o_bmerge}}">Merge</button><button class="btn sec sm" onClick="{{openArchive}}">Archive</button><button class="btn sec sm" onClick="{{o_bdel}}">Delete</button><button class="btnl" onClick="{{clearSel}}">Clear</button></div>
+</template>
+
+<div class="tw"><div style="overflow-x:auto"><div class="dt">
+<div class="dr"><div class="dh" style="width:36px"><button class="opt2" onClick="{{toggleAll}}" aria-label="Select all"><span class="cbx {{allOn}}">✓</span></button></div><div class="dh">Customer<span class="so">▼</span></div><template data-sc="for" list="{{cols}}" as="c" hint-placeholder-count="8"><div class="dh {{c.al}}">{{c.label}}<span class="so">▼</span></div></template><div class="dh"></div></div>
+<template data-sc="for" list="{{rows}}" as="r" hint-placeholder-count="6"><div class="dr {{r.sel}}"><div class="dc"><button class="opt2" onClick="{{r.toggle}}" aria-label="Select row"><span class="cbx {{r.on}}">✓</span></button></div><div class="dc"><a class="cm" href="Customer.dc.html">{{r.name}}</a><div class="cs">{{r.kind}}</div></div><template data-sc="for" list="{{r.cells}}" as="c" hint-placeholder-count="8"><div class="dc {{c.al}}"><span class="{{c.cls}}">{{c.v}}</span></div></template><div class="dc r"><span class="opt"><span class="b" tabindex="0">Options</span><span class="mn"><a href="Customer.dc.html">Edit customer details</a>
+<div class="sub2"><span>View</span><div class="mn2"><a href="Customer.dc.html">Notes</a><a href="Customer.dc.html">Service history</a><a href="P-Assets.dc.html">Customer portal (as customer)</a></div></div>
+<div class="sub2"><span>Add</span><div class="mn2"><button onClick="{{r.addSite}}">Site</button><a href="Contact-New.dc.html">Contact</a><button onClick="{{r.invite}}">Portal user</button></div></div>
+<button onClick="{{r.map}}">Map customer</button>
+<button onClick="{{r.merge}}">Merge customer</button>
+<div class="sep"></div>
+<button onClick="{{r.archive}}">Archive customer</button>
+<button class="dng" onClick="{{r.del}}">Delete customer</button></span></span></div></div></template>
+</div></div>
+<div class="pager"><span>Showing {{shown}} of 3,732</span><div><span class="n on">1</span><a href="Customers.dc.html">2</a><a href="Customers.dc.html">3</a><a href="Customers.dc.html">Next</a></div></div></div>
+</main>
+
+<template data-sc="if" value="{{dlgCols}}" hint-placeholder-val="{{ false }}">
+<div class="ovl"><div class="dlg mdl"><div class="mh">Modify table view<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div>
+<div class="mb"><p class="sub">Choose the columns to show. Customer name is always shown. Your choice is saved for you only.</p>
+<div class="fg c2"><template data-sc="for" list="{{allCols}}" as="c" hint-placeholder-count="14"><button class="opt2" onClick="{{c.toggle}}"><span class="cbx {{c.on}}">✓</span>{{c.label}}</button></template></div></div>
+<div class="mf"><button class="btn gh" onClick="{{resetCols}}">Reset to default</button><button class="btn" onClick="{{closeDlg}}">Done</button></div></div></div>
+</template>
+
+<template data-sc="if" value="{{dlgSave}}" hint-placeholder-val="{{ false }}">
+<div class="ovl"><div class="dlg mdl"><div class="mh">Save search<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div>
+<div class="mb"><div class="f"><label for="sv1">Name</label><input id="sv1" class="fi" value="NSW customers past due"></div>
+<p class="sub">Saves the current filters, letter and columns: {{filterSummary}}.</p>
+<button class="opt2" onClick="{{toggleShare}}"><span class="cbx {{shareOn}}">✓</span>Share with all staff</button></div>
+<div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{doSave}}">Save search</button></div></div></div>
+</template>
+
+<template data-sc="if" value="{{dlgExport}}" hint-placeholder-val="{{ false }}">
+<div class="ovl"><div class="dlg mdl"><div class="mh">Export customers<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div>
+<div class="mb">
+<div><div class="f"><label>Rows</label></div><div class="radio" style="margin:0"><button class="opt2" onClick="{{rowsSel}}"><span class="rd {{rowsSelOn}}"></span>Selected ({{selCount}})</button><button class="opt2" onClick="{{rowsAll}}"><span class="rd {{rowsAllOn}}"></span>All matching (3,732)</button></div></div>
+<div><div class="f"><label>Columns</label></div><div class="radio" style="margin:0"><button class="opt2" onClick="{{colsVis}}"><span class="rd {{colsVisOn}}"></span>Columns shown ({{colCount}})</button><button class="opt2" onClick="{{colsAllX}}"><span class="rd {{colsAllOn}}"></span>All columns (18)</button></div></div>
+<p class="hint">CSV, UTF-8. Cabinet codes and internal notes are never exported.</p></div>
+<div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{doExport}}">Download CSV</button></div></div></div>
+</template>
+
+<template data-sc="if" value="{{dlgArchive}}" hint-placeholder-val="{{ false }}">
+<div class="ovl"><div class="dlg mdl"><div class="mh">Archive customer<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div>
+<div class="mb"><p>Customers with history cannot be deleted. Archiving hides them from lists and ends their portal access. Sites and assets stay linked.</p>
+<div class="f"><label for="ar1">Reason</label><select id="ar1" class="fi"><option>No longer a customer</option><option>Duplicate record</option><option>Business closed</option><option>Other</option></select></div></div>
+<div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{doArchive}}">Archive</button></div></div></div>
+</template>
+
+<template data-sc="if" value="{{dlgDel}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Delete customer<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><p>Sample Client A has sites, assets and service history, so it cannot be deleted.</p><p class="sub">Archive it instead to hide it from lists and end portal access. Only customers with no history can be deleted.</p></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{openArchive}}">Archive instead</button></div></div></div></template>
+<template data-sc="if" value="{{dlgMap}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Map: Sample Client A<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><div class="ph2" style="width:100%;height:260px">Map of 94 sites · pins coloured by compliance</div><p class="hint">Geocoded from each site's street address. Sites with no address are listed below the map.</p></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Close</button></div></div></div></template>
+<template data-sc="if" value="{{dlgAddsite}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Add site to Sample Client A<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><div class="f"><label for="as1">Site</label><input id="as1" class="fi" placeholder="Search existing sites by name or address"></div><p class="hint">Or create a new site with its own address.</p><a class="btn sec" href="Site-New.dc.html" style="align-self:flex-start">Create new site</a></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{okToast}}">Add</button></div></div></div></template>
+<template data-sc="if" value="{{dlgInvite}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Invite portal user<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><div class="f"><label for="iv1">Contact</label><select id="iv1" class="fi"><option>Sample Contact 01 (c01@sample-a.example)</option><option>New person</option></select></div><p class="hint">Sees only this customer. The invite link expires in 7 days.</p></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{okToast}}">Send invite</button></div></div></div></template>
+<template data-sc="if" value="{{d_merge}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Merge customers<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><div class="f"><label for="mg1">Merge into *</label><input id="mg1" class="fi" placeholder="Search customers"><span class="hint">Wildcard search is %</span></div></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_merge}}">Merge</button></div></div></div></template>
+<template data-sc="if" value="{{d_bmap}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Map customers<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><div class="ph2" style="width:100%;height:260px">Map of {{selCount}} selected customers</div></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Close</button></div></div></div></template>
+<template data-sc="if" value="{{d_bmerge}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Merge customers<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><template data-sc="if" value="{{mergeFew}}" hint-placeholder-val="{{ false }}"><div class="mb"><p>Select at least 2 customers to merge.</p></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Close</button></div></template><template data-sc="if" value="{{mergeOk}}" hint-placeholder-val="{{ true }}"><div class="mb"><div class="f"><label for="bmq">Merge into *</label><div class="cbo"><input id="bmq" class="fi" autocomplete="off" placeholder="Search customers by name" value="{{mq}}" onChange="{{mtype}}" onFocus="{{mfocus}}"><button class="cbo-c" onClick="{{mtoggle}}" aria-label="Show customers"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></div><template data-sc="if" value="{{mopen}}" hint-placeholder-val="{{ true }}"><div class="cbl"><template data-sc="if" value="{{hasSelOpts}}" hint-placeholder-val="{{ true }}"><div class="cbo-g">Selected</div><template data-sc="for" list="{{moptsSel}}" as="n" hint-placeholder-count="2"><button class="cbo-o {{n.on}}" onClick="{{n.pick}}"><span>{{n.name}}</span><span class="cs">{{n.sub}}</span></button></template></template><template data-sc="if" value="{{hasOtherOpts}}" hint-placeholder-val="{{ true }}"><div class="cbo-g">Other customers</div><template data-sc="for" list="{{moptsOther}}" as="n" hint-placeholder-count="3"><button class="cbo-o {{n.on}}" onClick="{{n.pick}}"><span>{{n.name}}</span><span class="cs">{{n.sub}}</span></button></template></template><template data-sc="if" value="{{mnone}}" hint-placeholder-val="{{ false }}"><div class="cbo-e">No customers match this search.</div></template></div></template><template data-sc="if" value="{{merr}}" hint-placeholder-val="{{ false }}"><span class="cberr">Choose the customer to merge into.</span></template><template data-sc="if" value="{{hasKeep}}" hint-placeholder-val="{{ false }}"><span class="hint">{{mergeMsg}}</span></template></div></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_bmerge}}">Merge</button></div></template></div></div></template>
+<template data-sc="if" value="{{d_bdel}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Delete customers<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><p>Delete {{selCount}} selected customers?</p></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_bdel}}">Delete</button></div></div></div></template>
+<template data-sc="if" value="{{hasToast}}" hint-placeholder-val="{{ false }}"><div class="toast">{{toast}}<button onClick="{{hideToast}}">Dismiss</button></div></template>
+</div>
+</template>
+<div id="dc-root"></div>
+<a class="dc-back" href="index.html" title="All screens">All screens</a>
+<style>.dc-back{position:fixed;right:14px;bottom:14px;z-index:999;background:#0f1b2d;color:#fff;font:600 12px/1 Inter,system-ui,sans-serif;padding:9px 12px;border-radius:8px;text-decoration:none;opacity:.85}.dc-back:hover{opacity:1}</style>
+
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":940}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.defCols = ['id','phone','email','addr','suburb','state','pc','country','maddr','msub','mstate','mpc','created'];
+this.state = { f: 'all', letter: 'All', sel: {}, adv: false, dlg: '', cols: this.defCols.slice(), share: false, saved: ['Unassigned sites', 'Past due, NSW'], toast: '', rowsMode: 'all', colsMode: 'vis' };
+}
+renderVals() {
+const st = this.state;
+const C = [['id','Customer ID',''],['phone','Phone',''],['email','Email',''],['addr','Address',''],['suburb','Suburb',''],['state','State',''],['pc','Postcode',''],['country','Country',''],['maddr','Billing address',''],['msub','Billing suburb',''],['mstate','Billing state',''],['mpc','Billing postcode',''],['created','Date created',''],['contact','Primary contact',''],['sites','Sites','r'],['assets','Assets','r'],['comp','Compliance',''],['portal','Portal','']];
+const D = [
+{ k:'co', name:'Sample Client A', kind:'Company', type:'Customer', id:'0001', contact:'Sample Contact 01', phone:'00 0000 0001', email:'c01@sample.example', addr:'1 Sample St', suburb:'Sydney', state:'NSW', pc:'2000', country:'Australia', maddr:'', msub:'', mstate:'', mpc:'', created:'07/07/2021', sites:'94', assets:'212', comp:['38 past due','tag bd2'], portal:['2 users','tag ok'] },
+{ k:'co', name:'Sample Client B', kind:'Company', type:'Customer', id:'0002', contact:'Sample Contact 02', phone:'00 0000 0002', email:'c02@sample.example', addr:'2 Sample St', suburb:'Parramatta', state:'NSW', pc:'2150', country:'Australia', maddr:'', msub:'', mstate:'', mpc:'', created:'21/09/2021', sites:'12', assets:'31', comp:['3 due soon','tag wn'], portal:['1 user','tag ok'] },
+{ k:'co', name:'Sample Client C', kind:'Company', type:'Customer', id:'0003', contact:'Sample Contact 03', phone:'00 0000 0003', email:'c03@sample.example', addr:'3 Sample St', suburb:'Exmouth', state:'WA', pc:'6707', country:'Australia', maddr:'PO Box 830', msub:'Exmouth', mstate:'WA', mpc:'6707', created:'31/07/2018', sites:'3', assets:'6', comp:['Up to date','tag ok'], portal:['Not invited','tag nt'] },
+{ k:'in', name:'Sample Person D', kind:'Individual', type:'Customer', id:'0004', contact:'None', phone:'0400 000 004', email:'d@sample.example', addr:'4 Sample St', suburb:'Hume', state:'ACT', pc:'2620', country:'Australia', maddr:'', msub:'', mstate:'', mpc:'', created:'14/12/2021', sites:'1', assets:'1', comp:['1 past due','tag bd2'], portal:['Not invited','tag nt'] },
+{ k:'co', name:'Unassigned', kind:'Company, holds sites with no customer (D3)', type:'Customer', id:'0005', contact:'None', phone:'None', email:'None', addr:'None', suburb:'None', state:'None', pc:'', country:'Australia', maddr:'', msub:'', mstate:'', mpc:'', created:'31/10/2026', sites:'279', assets:'402', comp:['120 past due','tag bd2'], portal:['Not invited','tag nt'] },
+{ k:'co', name:'Sample Prospect F', kind:'Company', type:'Lead', id:'0006', contact:'Sample Contact 06', phone:'00 0000 0006', email:'f@sample.example', addr:'6 Sample St', suburb:'Melbourne', state:'VIC', pc:'3000', country:'Australia', maddr:'', msub:'', mstate:'', mpc:'', created:'26/06/2024', sites:'0', assets:'0', comp:['No assets','tag nt'], portal:['Not invited','tag nt'] }
+];
+const fil = D.filter((r) => st.f === 'all' || (st.f === 'co' && r.k === 'co') || (st.f === 'in' && r.k === 'in') || (st.f === 'lead' && r.type === 'Lead') || (st.f === 'arch' && false));
+const vis = C.filter((c) => st.cols.indexOf(c[0]) >= 0);
+const selIds = Object.keys(st.sel).filter((k) => st.sel[k]);
+const set = (o) => this.setState(o);
+const toggleSel = (id) => { const n = Object.assign({}, st.sel); n[id] = !n[id]; set({ sel: n }); };
+const chipDefs = [['all','All'],['co','Company'],['in','Individual'],['lead','Lead'],['arch','Archived']];
+const L = ['#'].concat('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')).concat(['All']);
+return {
+advLabel: st.adv ? 'Hide advanced' : 'Advanced', adv: st.adv, toggleAdv: () => set({ adv: !st.adv }),
+chips: chipDefs.map((c) => ({ label: c[1], cls: st.f === c[0] ? 'on' : '', pick: () => set({ f: c[0] }) })),
+letters: L.map((l) => ({ label: l, cls: st.letter === l ? 'on' : '', pick: () => set({ letter: l }) })),
+cols: vis.map((c) => ({ label: c[1], al: c[2] })),
+colCount: vis.length,
+rows: fil.map((r) => ({ name: r.name, kind: r.kind, on: st.sel[r.id] ? 'on' : '', sel: st.sel[r.id] ? 'sel' : '', toggle: () => toggleSel(r.id), archive: () => set({ dlg: 'archive' }), del: () => set({ dlg: 'del' }), map: () => set({ dlg: 'map' }), merge: () => set({ dlg: 'merge' }), addSite: () => set({ dlg: 'addsite' }), invite: () => set({ dlg: 'invite' }),
+  cells: vis.map((c) => { const v = r[c[0]]; return Array.isArray(v) ? { v: v[0], cls: v[1], al: c[2] } : { v: v, cls: '', al: c[2] }; }) })),
+shown: fil.length,
+allOn: fil.length && fil.every((r) => st.sel[r.id]) ? 'on' : '',
+toggleAll: () => { const all = fil.every((r) => st.sel[r.id]); const n = {}; if (!all) fil.forEach((r) => { n[r.id] = true; }); set({ sel: n }); },
+hasSel: selIds.length > 0, selCount: selIds.length, clearSel: () => set({ sel: {} }),
+openCols: () => set({ dlg: 'cols' }), openSave: () => set({ dlg: 'save' }), openExport: () => set({ dlg: 'export', rowsMode: selIds.length ? 'sel' : 'all' }), openArchive: () => set({ dlg: 'archive' }),
+closeDlg: () => set({ dlg: '' }), o_merge: () => set({ dlg: 'merge' }), d_merge: st.dlg === 'merge', ok_merge: () => set({ dlg: '', toast: 'Customers merged' }),
+dlgCols: st.dlg === 'cols', dlgSave: st.dlg === 'save', dlgExport: st.dlg === 'export', dlgArchive: st.dlg === 'archive', dlgDel: st.dlg === 'del', dlgMap: st.dlg === 'map', dlgAddsite: st.dlg === 'addsite', dlgInvite: st.dlg === 'invite', okToast: () => set({ dlg: '', toast: { addsite: 'Site added to customer', invite: 'Invite sent' }[st.dlg] || 'Done' }),
+allCols: C.map((c) => ({ label: c[1], on: st.cols.indexOf(c[0]) >= 0 ? 'on' : '', toggle: () => { const n = st.cols.indexOf(c[0]) >= 0 ? st.cols.filter((x) => x !== c[0]) : st.cols.concat([c[0]]); set({ cols: C.map((x) => x[0]).filter((x) => n.indexOf(x) >= 0) }); } })),
+resetCols: () => set({ cols: this.defCols.slice() }),
+filterSummary: 'letter ' + st.letter + ', ' + vis.length + ' columns',
+shareOn: st.share ? 'on' : '', toggleShare: () => set({ share: !st.share }),
+doSave: () => set({ dlg: '', toast: 'Search saved' + (st.share ? ' and shared with all staff' : '') }),
+rowsSelOn: st.rowsMode === 'sel' ? 'on' : '', rowsAllOn: st.rowsMode === 'all' ? 'on' : '', rowsSel: () => set({ rowsMode: 'sel' }), rowsAll: () => set({ rowsMode: 'all' }),
+colsVisOn: st.colsMode === 'vis' ? 'on' : '', colsAllOn: st.colsMode === 'all' ? 'on' : '', colsVis: () => set({ colsMode: 'vis' }), colsAllX: () => set({ colsMode: 'all' }),
+doExport: () => set({ dlg: '', toast: 'Export started. The CSV will download when ready.' }),
+doArchive: () => set({ dlg: '', sel: {}, toast: 'Customer archived. Undo from the Archived filter.' }),
+o_bmap: () => set({ dlg: 'bmap' }), d_bmap: st.dlg === 'bmap',
+o_bmerge: () => set({ dlg: 'bmerge', keep: '', mq: '', mopen: true, merr: false }), d_bmerge: st.dlg === 'bmerge', mergeFew: selIds.length < 2, mergeOk: selIds.length >= 2,
+...(() => { const sub = (r) => 'ID ' + r.id; const q = (st.mq || '').toLowerCase(); const m = (r) => !q || (r.name + ' ' + sub(r)).toLowerCase().indexOf(q) >= 0;
+  const opt = (r) => ({ name: r.name, sub: sub(r), on: st.keep === r.id ? 'on' : '', pick: () => set({ keep: r.id, mq: r.name, mopen: false, merr: false }) });
+  const a = D.filter((r) => st.sel[r.id] && m(r)).map(opt), b = D.filter((r) => !st.sel[r.id] && m(r)).map(opt);
+  const k = D.filter((r) => r.id === st.keep)[0]; const others = selIds.filter((id) => id !== st.keep).length;
+  return { moptsSel: a, moptsOther: b, hasSelOpts: a.length > 0, hasOtherOpts: b.length > 0, mnone: !a.length && !b.length, mopen: !!st.mopen, mq: st.mq || '', merr: !!st.merr, hasKeep: !!k,
+    mergeMsg: k ? others + ' selected ' + (others === 1 ? 'customer' : 'customers') + ' will be merged into ' + k.name + '.' : '',
+    mtype: (e) => set({ mq: e.target.value, mopen: true, keep: '' }), mfocus: () => set({ mopen: true }), mtoggle: () => set({ mopen: !st.mopen }),
+    ok_bmerge: () => st.keep && others > 0 ? set({ dlg: '', sel: {}, toast: (others + 1) + ' customers merged into ' + k.name }) : set({ merr: true }) }; })(),
+o_bdel: () => set({ dlg: 'bdel' }), d_bdel: st.dlg === 'bdel', ok_bdel: () => set({ dlg: '', sel: {}, toast: selIds.length + ' customers deleted' }),
+hasToast: !!st.toast, toast: st.toast, hideToast: () => set({ toast: '' })
+};
+}
+}
+</script>
+</body>
+</html>

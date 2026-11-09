@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>My assets</title>
+<script src="react-vendor.js"></script>
+<script src="dc-lite.js"></script>
+<link rel="stylesheet" href="ds.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>body{margin:0;font-family:Inter,system-ui,sans-serif}</style>
+
+</head>
+<body>
+<template id="dc-tpl">
+
+<div class="ptop">
+<div class="pb"><span class="mark" style="background:var(--p0)"><svg width="18" height="18" viewBox="0 0 24 24" fill="#d8352a" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.8 4.5 6.5 4.5c2 0 3.700 1.100 5.500 3.200 1.800-2.100 3.500-3.200 5.500-3.200 3.700 0 5.600 3.900 4.100 7.300C19.500 16.400 12 21 12 21z"/></svg></span><span style="color:var(--p7)">AEDS Portal</span></div>
+<nav class="pnav"><a class="on" href="P-Assets.dc.html">My assets</a><a href="P-Reports.dc.html">Reports</a><a href="P-Users.dc.html">Account</a></nav>
+<span style="display:flex;gap:12px;align-items:center"><span class="cs">Sample Client A</span><a class="btn sec sm" href="P-Login.dc.html">Sign out</a></span>
+</div>
+<div class="pwrap">
+<div class="ph"><div><div class="h1">My assets</div><div class="sub">Your defibrillators and when they are next due.</div></div></div>
+<div class="g3 mb">
+<div class="kpi"><div class="kl">Defibrillators</div><div class="kv">212</div><div class="ks">across 94 sites</div></div>
+<div class="kpi"><div class="kl">Due in 90 days</div><div class="kv">7</div><div class="ks">book a service</div></div>
+<div class="kpi"><div class="kl">Needs checking</div><div class="kv">38</div><div class="ks">dates being verified by AEDS</div></div>
+</div>
+<div class="tb"><label class="search"><input aria-label="Filter assets" placeholder="Filter by site or serial number"></label><span class="chip on">All</span><span class="chip">Due soon</span><span class="chip">Needs checking</span></div>
+<div class="tw"><div style="overflow-x:auto"><table class="tbl">
+<thead><tr><th>Site</th><th>Asset</th><th>Serial</th><th>Next due</th><th>Status</th><th></th></tr></thead>
+<tbody>
+<tr><td class="cm">Sample Site 01</td><td>Defibrillator</td><td>SAMPLE-0010</td><td>14/03/2027</td><td><span class="tag ok">Up to date</span></td><td class="r"><a href="P-Asset.dc.html">View</a></td></tr>
+<tr><td class="cm">Sample Site 07</td><td>Defibrillator</td><td>SAMPLE-0001</td><td>12/03/2021</td><td><span class="tag bd2">Being verified</span></td><td class="r"><a href="P-Asset.dc.html">View</a></td></tr>
+<tr><td class="cm">Sample Site 15</td><td>Defibrillator</td><td>SAMPLE-0003</td><td>28/11/2026</td><td><span class="tag wn">Due in 24 days</span></td><td class="r"><a href="P-Asset.dc.html">View</a></td></tr>
+<tr><td class="cm">Sample Site 21</td><td>Defibrillator</td><td>SAMPLE-0021</td><td>09/09/2027</td><td><span class="tag ok">Up to date</span></td><td class="r"><a href="P-Asset.dc.html">View</a></td></tr>
+</tbody></table></div></div>
+</div>
+</template>
+<div id="dc-root"></div>
+<a class="dc-back" href="index.html" title="All screens">All screens</a>
+<style>.dc-back{position:fixed;right:14px;bottom:14px;z-index:999;background:#0f1b2d;color:#fff;font:600 12px/1 Inter,system-ui,sans-serif;padding:9px 12px;border-radius:8px;text-decoration:none;opacity:.85}.dc-back:hover{opacity:1}</style>
+
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

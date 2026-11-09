@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Find site or AED</title>
+<script src="react-vendor.js"></script>
+<script src="dc-lite.js"></script>
+<link rel="stylesheet" href="ds.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>body{margin:0;font-family:Inter,system-ui,sans-serif}</style>
+
+</head>
+<body>
+<template id="dc-tpl">
+
+<div class="tpage">
+<div class="tbar"><span>Find site or AED</span><span style="display:flex;gap:16px;align-items:center"><span class="tag ok">Online</span><span>Sample Technician</span><a href="T-Signin.dc.html">Sign out</a></span></div>
+<div class="tbody">
+<label for="q" style="display:block;font-weight:600;margin-bottom:6px">Search</label>
+<input id="q" class="tin" placeholder="Site name, address, serial number or barcode" style="margin-bottom:6px">
+<p class="hint" style="margin-bottom:18px">Search for the site you are at.</p>
+<div class="th" style="margin-bottom:8px">Recent sites</div>
+<div class="tc" style="margin-bottom:12px"><div class="tl"><div><div class="cm" style="font-size:18px">Sample Site 07</div><div class="cs" style="font-size:14px">7 Sample Rd, Parramatta · Sample Client A · 2 AEDs</div></div><span style="display:flex;gap:10px;align-items:center"><span class="tag bd2">2 past due</span><a class="tbtn" href="T-Asset.dc.html">Open</a></span></div></div>
+<div class="tc" style="margin-bottom:12px"><div class="tl"><div><div class="cm" style="font-size:18px">Sample Site 15</div><div class="cs" style="font-size:14px">15 Sample Ave, Newcastle · Sample Client A · 1 AED</div></div><span style="display:flex;gap:10px;align-items:center"><span class="tag wn">1 due soon</span><a class="tbtn sec" href="T-Asset.dc.html">Open</a></span></div></div>
+<div class="tc" style="margin-bottom:18px"><div class="tl"><div><div class="cm" style="font-size:18px">Sample Site 21</div><div class="cs" style="font-size:14px">21 Sample Way, Wollongong · Sample Client A · 1 AED</div></div><span style="display:flex;gap:10px;align-items:center"><span class="tag ok">OK</span><a class="tbtn sec" href="T-Asset.dc.html">Open</a></span></div></div>
+<a class="tbtn sec" href="T-Add.dc.html">Add an AED not in the register</a>
+</div>
+</div>
+</template>
+<div id="dc-root"></div>
+<a class="dc-back" href="index.html" title="All screens">All screens</a>
+<style>.dc-back{position:fixed;right:14px;bottom:14px;z-index:999;background:#0f1b2d;color:#fff;font:600 12px/1 Inter,system-ui,sans-serif;padding:9px 12px;border-radius:8px;text-decoration:none;opacity:.85}.dc-back:hover{opacity:1}</style>
+
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1024,"height":768}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Asset settings</title>
+<script src="react-vendor.js"></script>
+<script src="dc-lite.js"></script>
+<link rel="stylesheet" href="ds.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>body{margin:0;font-family:Inter,system-ui,sans-serif}</style>
+
+</head>
+<body>
+<template id="dc-tpl">
+
+<div class="app">
+<nav class="side">
+<div class="brand"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="#d8352a" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.8 4.5 6.5 4.5c2 0 3.7 1.1 5.5 3.2 1.8-2.1 3.5-3.2 5.5-3.2 3.7 0 5.600 3.900 4.100 7.300C19.500 16.400 12 21 12 21z"/></svg></span>AEDS</div>
+<a class="nv" href="Main.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Dashboard</a>
+<a class="nv" href="Customers.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg>Customers</a>
+<a class="nv" href="Sites.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Sites</a>
+<a class="nv" href="Contacts.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Contacts</a>
+<a class="nv" href="Assets.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5-9-10.5C2.600 7 5 4.500 8 4.500c1.800 0 3.200 1 4 2.500.8-1.500 2.200-2.500 4-2.500 3 0 5.400 2.500 5 6C20 16 12 21 12 21z"/></svg>Assets</a>
+<a class="nv" href="Compliance.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Compliance<span class="bd">12,908</span></a>
+<a class="nv" href="Reports.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Reports</a>
+<div class="gl">Admin</div>
+<a class="nv" href="Audit.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Audit log</a>
+<a class="nv" href="People.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.9.3 5.5 2.2 5.5 5.8"/></svg>People</a>
+<a class="nv on" href="Models.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>Asset settings</a>
+<a class="nv" href="Merge.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v6a4 4 0 004 4h8M18 14l-3-3M18 14l-3 3M6 20V14"/></svg>Site transfers</a>
+<div class="who"><span class="av">AD</span><div>Sample Admin<small>Administrator</small></div></div>
+</nav>
+<main class="main">
+<div class="top"><label class="search"><input aria-label="Search" placeholder="Search customers, sites, serial numbers"><span class="kbd">/</span></label><span class="role">Role: Administrator</span></div>
+<div class="ph"><div><div class="crumb">Admin</div><div class="h1">Asset settings</div><div class="sub">Asset types, service levels, test readings and lists that drive due dates.</div></div></div>
+<div style="display:grid;grid-template-columns:210px 1fr;gap:20px;align-items:start">
+<div class="card" style="padding:8px">
+<template data-sc="for" list="{{menu2}}" as="m" hint-placeholder-count="6"><button class="smi {{m.cls}}" onClick="{{m.pick}}">{{m.label}}</button></template>
+</div>
+<div>
+<template data-sc="if" value="{{is_types}}" hint-placeholder-val="{{ true }}"><div style="font-size:18px;font-weight:700">Asset types</div><div class="sub" style="margin-bottom:14px">Each type has its own fields, service levels and test readings.</div><div class="acts" style="margin-bottom:12px;justify-content:flex-end"><button class="btn" onClick="{{openEdit}}">New asset type</button></div><div class="tw"><table class="tbl"><thead><tr><th>Type</th><th>Fields</th><th>Service levels</th><th>Test readings</th><th></th></tr></thead><tbody><tr><td><span class="cm">Defibrillator</span></td><td>16</td><td>10</td><td>5</td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td><span class="cm">Cabinet</span></td><td>4</td><td>2</td><td>0</td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr></tbody></table></div><div class="card" style="margin-top:16px"><div class="ch">Defibrillator fields</div><div class="tw"><table class="tbl"><thead><tr><th>Field</th><th>Type</th></tr></thead><tbody><tr><td>Cabinet serial no.</td><td>Text</td></tr><tr><td>Location on site</td><td>Text</td></tr><tr><td>AED model</td><td>List</td></tr><tr><td>AED serial no.</td><td>Text</td></tr><tr><td>AED asset no.</td><td>Barcode</td></tr><tr><td>Notes</td><td>Text</td></tr><tr><td>SIM card no.</td><td>Text</td></tr><tr><td>SIM phone no.</td><td>Text</td></tr><tr><td>Communications</td><td>List</td></tr><tr><td>Cabinet model</td><td>List</td></tr><tr><td>Purchase date</td><td>Date</td></tr><tr><td>Cabinet keypad code</td><td>Encrypted</td></tr><tr><td>Monitoring renewal options</td><td>List</td></tr><tr><td>Cabinet maintenance code</td><td>Encrypted</td></tr></tbody></table></div></div></template>
+<template data-sc="if" value="{{is_levels}}" hint-placeholder-val="{{ false }}"><div style="font-size:18px;font-weight:700">Service levels</div><div class="sub" style="margin-bottom:14px">Lifespans used to set the due date of pads, batteries and services.</div><div class="acts" style="margin-bottom:12px;justify-content:flex-end"><button class="btn" onClick="{{openEdit}}">New service level</button></div><div class="tw"><table class="tbl"><thead><tr><th>Name</th><th class="r">Years</th><th class="r">Months</th><th></th></tr></thead><tbody><tr><td><span class="cm">Adult pad</span></td><td><span style="float:right">2</span></td><td><span style="float:right"></span></td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td><span class="cm">Adult pad</span></td><td><span style="float:right">5</span></td><td><span style="float:right"></span></td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td><span class="cm">Adult pads</span></td><td><span style="float:right">4</span></td><td><span style="float:right"></span></td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td><span class="cm">Battery</span></td><td><span style="float:right">4</span></td><td><span style="float:right"></span></td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td><span class="cm">Battery</span></td><td><span style="float:right">5</span></td><td><span style="float:right"></span></td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td><span class="cm">Multi-function pad</span></td><td><span style="float:right">4</span></td><td><span style="float:right">6</span></td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td><span class="cm">Paediatric</span></td><td><span style="float:right">2</span></td><td><span style="float:right"></span></td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td><span class="cm">Spare adult pad</span></td><td><span style="float:right">1</span></td><td><span style="float:right"></span></td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td><span class="cm">ZOLL 3 Unipad</span></td><td><span style="float:right">5</span></td><td><span style="float:right"></span></td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td><span class="cm">Annual service (contract)</span></td><td><span style="float:right">1</span></td><td><span style="float:right"></span></td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr></tbody></table></div></template>
+<template data-sc="if" value="{{is_tests}}" hint-placeholder-val="{{ false }}"><div style="font-size:18px;font-weight:700">Test readings</div><div class="sub" style="margin-bottom:14px">Checks a technician answers at every Defibrillator visit.</div><div class="acts" style="margin-bottom:12px;justify-content:flex-end"><button class="btn" onClick="{{openEdit}}">New test reading</button></div><div class="tw"><table class="tbl"><thead><tr><th class="r"></th><th>Check</th><th>Answer type</th><th>Applies to</th><th></th></tr></thead><tbody><tr><td>1</td><td><span class="cm">AIVIA status</span></td><td>List (Pass, Fail, N/A)</td><td>All service levels</td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td>2</td><td><span class="cm">AED status</span></td><td>List (Pass, Fail, N/A)</td><td>All service levels</td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td>3</td><td><span class="cm">AED shock tested</span></td><td>List (Pass, Fail, N/A)</td><td>All service levels</td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td>4</td><td><span class="cm">Base plate secure</span></td><td>List (Pass, Fail, N/A)</td><td>All service levels</td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr><tr><td>5</td><td><span class="cm">Optical sensor static green</span></td><td>List (Pass, Fail, N/A)</td><td>All service levels</td><td><button class="btnl" onClick="{{openEdit}}">Edit</button></td></tr></tbody></table></div></template>
+<template data-sc="if" value="{{is_lists}}" hint-placeholder-val="{{ false }}"><div style="font-size:18px;font-weight:700">Lists</div><div class="sub" style="margin-bottom:14px">Values offered in drop-down fields.</div><div class="g2"><div class="card"><div class="ch">AED model <button class="btnl" onClick="{{openEdit}}">Edit</button></div><div class="li"><span>ZOLL AED Plus</span><span class="cs">3,000 AEDs</span></div><div class="li"><span>Mindray D1 Public</span><span class="cs">1,011</span></div><div class="li"><span>Mindray C2</span><span class="cs">543</span></div><div class="li"><span>Philips HeartStart HS1</span><span class="cs">300</span></div><div class="li"><span>Cardiac Science Powerheart G3</span><span class="cs">232</span></div><div class="li"><span>and 18 more</span><span class="cs"></span></div></div><div class="card"><div class="ch">Cabinet model <button class="btnl" onClick="{{openEdit}}">Edit</button></div><div class="li"><span>100 Series</span><span class="cs"></span></div><div class="li"><span>320 Series</span><span class="cs"></span></div><div class="li"><span>50 Series</span><span class="cs"></span></div><div class="li"><span>Aivia Go</span><span class="cs"></span></div></div><div class="card"><div class="ch">Communications <button class="btnl" onClick="{{openEdit}}">Edit</button></div><div class="li"><span>Optus</span><span class="cs">358</span></div><div class="li"><span>Telstra</span><span class="cs">72</span></div><div class="li"><span>Sigfox</span><span class="cs">23</span></div><div class="li"><span>Vodafone NZ</span><span class="cs">5</span></div></div><div class="card"><div class="ch">Monitoring renewal options <button class="btnl" onClick="{{openEdit}}">Edit</button></div><div class="li"><span>Service Contract</span><span class="cs"></span></div><div class="li"><span>Monitoring &amp; Programming</span><span class="cs"></span></div><div class="li"><span>Sigfox</span><span class="cs"></span></div></div></div></template>
+</div>
+</div>
+</main>
+
+<template data-sc="if" value="{{dlgUser}}" hint-placeholder-val="{{ false }}">
+<div class="ovl"><div class="dlg mdl"><div class="mh">Staff user<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div>
+<div class="mb"><div class="fg c2">
+<div class="f"><label for="u1">First name</label><input id="u1" class="fi" value="Sample"></div><div class="f"><label for="u2">Last name</label><input id="u2" class="fi" value="Technician"></div>
+<div class="f s2"><label for="u3">Email (sign-in)</label><input id="u3" class="fi" value="sample.tech@aeds.example"></div>
+<div class="f"><label for="u4">Role</label><select id="u4" class="fi"><option>Technician</option><option>Office staff</option><option>Admin</option></select></div>
+<div class="f"><label for="u5">Status</label><select id="u5" class="fi"><option>Active</option><option>Deactivated</option></select></div>
+</div><p class="hint">An email invite is sent to set a password. Two-factor sign-in is required for staff.</p></div>
+<div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{saveDlg}}">Save user</button></div></div></div>
+</template>
+<template data-sc="if" value="{{dlgInvite}}" hint-placeholder-val="{{ false }}">
+<div class="ovl"><div class="dlg mdl"><div class="mh">Invite portal user<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div>
+<div class="mb"><div class="f"><label for="i1">Customer</label><select id="i1" class="fi"><option>Sample Client A</option><option>Sample Client B</option></select></div>
+<div class="f"><label for="i2">Contact</label><select id="i2" class="fi"><option>Sample Contact 01 (c01@sample-a.example)</option><option>New person</option></select></div>
+<p class="hint">The portal user sees only this customer's sites, AEDs and shared files. The invite link expires in 7 days.</p></div>
+<div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{saveDlg}}">Send invite</button></div></div></div>
+</template>
+<template data-sc="if" value="{{dlgEdit}}" hint-placeholder-val="{{ false }}">
+<div class="ovl"><div class="dlg mdl"><div class="mh">{{editTitle}}<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div>
+<div class="mb">
+<template data-sc="if" value="{{is_levels}}" hint-placeholder-val="{{ false }}"><div class="fg c4"><div class="f s4" style="grid-column:1/-1"><label for="e1">Service level name</label><input id="e1" class="fi" value="Battery - 4 Years"></div><div class="f"><label for="e2">Years</label><input id="e2" class="fi" value="4"></div><div class="f"><label for="e3">Months</label><input id="e3" class="fi" value="0"></div><div class="f"><label for="e4">Days</label><input id="e4" class="fi" value="0"></div><div class="f"><label for="e5">Part</label><select id="e5" class="fi"><option>Battery</option><option>Adult pad</option><option>Paediatric pad</option><option>Service</option></select></div></div><p class="hint">Changing a lifespan only affects parts fitted after the change.</p></template>
+<template data-sc="if" value="{{is_tests}}" hint-placeholder-val="{{ false }}"><div class="f"><label for="e6">Check</label><input id="e6" class="fi" value="AED status"></div><div class="f"><label for="e7">Answers</label><input id="e7" class="fi" value="Pass, Fail, N/A"></div><div class="f"><label for="e8">Applies to</label><select id="e8" class="fi"><option>All service levels</option></select></div></template>
+<template data-sc="if" value="{{is_types}}" hint-placeholder-val="{{ false }}"><div class="f"><label for="e9">Type name</label><input id="e9" class="fi" value="Defibrillator"></div><div class="f"><label for="e10">Default technician</label><select id="e10" class="fi"><option>Not selected</option><option>Sample Technician</option></select></div></template>
+<template data-sc="if" value="{{is_lists}}" hint-placeholder-val="{{ false }}"><div class="f"><label for="e11">Values, one per line</label><textarea id="e11" class="fi" rows="6">100 Series&#10;320 Series&#10;50 Series&#10;Aivia Go</textarea></div><p class="hint">A value in use can be hidden but not deleted.</p></template>
+</div>
+<div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{saveDlg}}">Save</button></div></div></div>
+</template>
+<template data-sc="if" value="{{hasToast}}" hint-placeholder-val="{{ false }}"><div class="toast">{{toast}}<button onClick="{{hideToast}}">Dismiss</button></div></template>
+</div>
+</template>
+<div id="dc-root"></div>
+<a class="dc-back" href="index.html" title="All screens">All screens</a>
+<style>.dc-back{position:fixed;right:14px;bottom:14px;z-index:999;background:#0f1b2d;color:#fff;font:600 12px/1 Inter,system-ui,sans-serif;padding:9px 12px;border-radius:8px;text-decoration:none;opacity:.85}.dc-back:hover{opacity:1}</style>
+
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1100}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { s: 'types', dlg: '', toast: '' }; }
+renderVals() {
+const g1 = [];
+const g2 = [['types','Asset types'],['levels','Service levels'],['tests','Test readings'],['lists','Lists']];
+const cur = this.state.s; const set = (o) => this.setState(o);
+const mk = (d) => ({ label: d[1], cls: d[0] === cur ? 'on' : '', pick: () => set({ s: d[0], dlg: '' }) });
+const out = { menu1: g1.map(mk), menu2: g2.map(mk) };
+g1.concat(g2).forEach((d) => { out['is_' + d[0]] = d[0] === cur; });
+const names = { types: 'Asset type', levels: 'Service level', tests: 'Test reading', lists: 'Cabinet model list', zones: 'Zone', notify: 'Notification' };
+return Object.assign(out, {
+openUser: () => set({ dlg: 'user' }), openInvite: () => set({ dlg: 'invite' }), openEdit: () => set({ dlg: 'edit' }),
+dlgUser: this.state.dlg === 'user', dlgInvite: this.state.dlg === 'invite', dlgEdit: this.state.dlg === 'edit',
+editTitle: names[cur] || 'Edit', closeDlg: () => set({ dlg: '' }),
+saveDlg: () => set({ dlg: '', toast: this.state.dlg === 'invite' ? 'Invite sent' : 'Saved' }),
+hasToast: !!this.state.toast, toast: this.state.toast, hideToast: () => set({ toast: '' })
+});
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Compliance</title>
+<script src="react-vendor.js"></script>
+<script src="dc-lite.js"></script>
+<link rel="stylesheet" href="ds.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>body{margin:0;font-family:Inter,system-ui,sans-serif}</style>
+
+</head>
+<body>
+<template id="dc-tpl">
+
+<div class="app">
+<nav class="side">
+<div class="brand"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="#d8352a" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.8 4.5 6.5 4.5c2 0 3.7 1.1 5.5 3.2 1.8-2.1 3.5-3.2 5.5-3.2 3.7 0 5.600 3.900 4.100 7.300C19.500 16.400 12 21 12 21z"/></svg></span>AEDS</div>
+<a class="nv" href="Main.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Dashboard</a>
+<a class="nv" href="Customers.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg>Customers</a>
+<a class="nv" href="Sites.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Sites</a>
+<a class="nv" href="Contacts.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Contacts</a>
+<a class="nv" href="Assets.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5-9-10.5C2.600 7 5 4.500 8 4.500c1.800 0 3.200 1 4 2.500.8-1.500 2.200-2.500 4-2.500 3 0 5.400 2.500 5 6C20 16 12 21 12 21z"/></svg>Assets</a>
+<a class="nv on" href="Compliance.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Compliance<span class="bd">12,908</span></a>
+<a class="nv" href="Reports.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Reports</a>
+<div class="gl">Admin</div>
+<a class="nv" href="Audit.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Audit log</a>
+<a class="nv" href="People.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.9.3 5.5 2.2 5.5 5.8"/></svg>People</a>
+<a class="nv" href="Models.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>Asset settings</a>
+<a class="nv" href="Merge.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v6a4 4 0 004 4h8M18 14l-3-3M18 14l-3 3M6 20V14"/></svg>Site transfers</a>
+<div class="who"><span class="av">AD</span><div>Sample Admin<small>Administrator</small></div></div>
+</nav>
+<main class="main">
+<div class="top"><label class="search"><input aria-label="Search" placeholder="Search customers, sites, serial numbers"><span class="kbd">/</span></label><span class="role">Role: Administrator</span></div>
+<div class="ph" style="margin-bottom:12px"><div><div class="h1">Compliance</div><div class="sub">Every AED that is expired or due soon. Expired if any current pad or battery has passed its expiry; due soon if any expires within 90 days.</div></div></div>
+<div class="panel"><div class="ch" style="margin-bottom:12px">Search criteria</div><div class="fg" style="grid-template-columns:repeat(4,minmax(0,1fr))"><div class="f"><label for="c1">Show</label><select id="c1" class="fi"><option>Expired and due soon (90 days)</option><option>Expired only</option><option>Due soon only (90 days)</option><option>Expiry date range...</option></select></div><div class="f"><label for="c2">Client</label><input id="c2" class="fi" placeholder="Search clients"></div><div class="f"><label for="c3">Site</label><input id="c3" class="fi" placeholder="Search sites"></div><div class="f"><label for="c4">State</label><select id="c4" class="fi"><option>All states</option><option>NSW</option><option>VIC</option><option>QLD</option><option>WA</option><option>SA</option><option>TAS</option><option>ACT</option><option>NT</option></select></div><div class="f"><label for="c5">AED model</label><select id="c5" class="fi"><option>All models</option><option>ZOLL AED Plus</option><option>Mindray D1 Public</option><option>Philips HeartStart HS1</option><option>Cardiac Science Powerheart G3</option></select></div><div class="f"><label for="c6">Part</label><select id="c6" class="fi"><option>All parts</option><option>Adult pad</option><option>Paediatric pad</option><option>Multi-function pad</option><option>Battery</option></select></div><div class="f"><label for="c7">Date checked</label><select id="c7" class="fi"><option>All</option><option>Unverified (from Simpro)</option><option>Verified</option></select></div><div class="f" style="align-self:end"><button class="btn" onClick="{{doSearch}}" style="width:100%">Search</button></div></div></div>
+<div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap"><span class="cs" style="align-self:center">Pad and battery dates migrated from Simpro:</span><span class="tag bd2">Expired 12,710</span><span class="tag wn">Due within 90 days 198</span><span class="tag ok">Later 4,202</span><span class="tag nt">All unverified until checked (D1)</span></div>
+<div style="display:flex;align-items:center;gap:14px;margin:6px 0 12px"><div class="h1" style="font-size:18px">Results <span style="color:var(--t3);font-weight:500">(sample: {{shown}} sites)</span></div><span style="flex:1"></span><button class="btnl" onClick="{{collapseAll}}">Collapse all</button><button class="btnl" onClick="{{expandAll}}">Expand all</button><button class="ibtn" onClick="{{o_export}}" aria-label="Export CSV" title="Export CSV"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg></button></div>
+<template data-sc="if" value="{{hasSel}}" hint-placeholder-val="{{ false }}"><div class="bulk"><b>{{selCount}} selected</b><span style="flex:1"></span><button class="btn sec sm" onClick="{{o_export}}">Export selected</button><button class="btn sec sm" onClick="{{o_confirm}}">Confirm dates</button><button class="btnl" onClick="{{clearSel}}">Clear</button></div></template>
+<template data-sc="for" list="{{groups}}" as="g" hint-placeholder-count="4"><div class="card" style="padding:0;margin-bottom:12px;overflow:visible">
+<div style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)"><button class="opt2" onClick="{{g.toggleSel}}" aria-label="Select site"><span class="cbx {{g.selOn}}">✓</span></button><a class="cm" href="Customer.dc.html">{{g.customer}}</a><span style="color:var(--t3)">›</span><a href="Site.dc.html">{{g.site}}</a><span class="cs">{{g.state}}</span><span class="tag nt">{{g.count}} AED</span><span style="flex:1"></span><span class="tag {{g.worstCls}}">{{g.worst}}</span><button class="ibtn" style="width:32px;height:32px" onClick="{{g.toggle}}" aria-label="Show or hide AEDs"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:rotate({{g.rot}}deg)"><path d="M6 9l6 6 6-6"/></svg></button></div>
+<template data-sc="if" value="{{g.open}}" hint-placeholder-val="{{ true }}"><div><table class="tbl"><thead><tr><th style="width:36px"></th><th>Asset ID</th><th>AED model</th><th>AED serial no.</th><th>Location on site</th><th>Part</th><th>Expiry date</th><th>Date checked</th><th>Status</th><th></th></tr></thead><tbody>
+<template data-sc="for" list="{{g.rows}}" as="r" hint-placeholder-count="1"><tr><td><button class="opt2" onClick="{{r.toggle}}" aria-label="Select AED"><span class="cbx {{r.on}}">✓</span></button></td><td><a class="cm" href="Asset.dc.html">{{r.id}}</a></td><td>{{r.model}}</td><td>{{r.serial}}</td><td>{{r.loc}}</td><td>{{r.part}}</td><td>{{r.date}}</td><td><span class="tag {{r.vcls}}">{{r.ver}}</span></td><td><span class="tag {{r.cls}}">{{r.status}}</span></td><td class="r"><span class="opt"><span class="b" tabindex="0">Options</span><span class="mn" style="z-index:30"><a href="Asset.dc.html">Open AED</a><a href="Asset.dc.html">Fit new pad or battery</a><a href="Visit.dc.html">Record service visit</a><button onClick="{{o_confirm}}">Confirm dates</button></span></span></td></tr></template>
+</tbody></table></div></template></div></template>
+<div style="display:flex;justify-content:center;margin:6px 0 20px"><button class="btn sec" onClick="{{more}}">Show more sites</button></div>
+</main>
+<template data-sc="if" value="{{d_confirm}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Confirm dates<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><p>Marks the expiry dates of the current pads and batteries on the selected AEDs as checked. Use this when a technician has seen the real dates on site.</p><div class="f"><label for="cf1">Checked on</label><input id="cf1" class="fi" value="05/11/2026"></div><div class="f"><label for="cf2">Checked by</label><select id="cf2" class="fi"><option>Sample Technician</option><option>Sample Admin</option></select></div><p class="hint">If a date was wrong, fit the correct part on the AED instead. Each confirmation is written to the audit log.</p></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_confirm}}">Confirm</button></div></div></div></template>
+<template data-sc="if" value="{{d_export}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Export due list<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><p>Exports every AED in the current results with client, site, model, serial, part, expiry date, date checked and status.</p><p class="hint">CSV, UTF-8. Staff use this list until email reminders arrive in Phase 2 (P5). Cabinet codes are never exported.</p></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_export}}">Download CSV</button></div></div></div></template>
+<template data-sc="if" value="{{hasToast}}" hint-placeholder-val="{{ false }}"><div class="toast">{{toast}}<button onClick="{{hideToast}}">Dismiss</button></div></template>
+</div>
+</template>
+<div id="dc-root"></div>
+<a class="dc-back" href="index.html" title="All screens">All screens</a>
+<style>.dc-back{position:fixed;right:14px;bottom:14px;z-index:999;background:#0f1b2d;color:#fff;font:600 12px/1 Inter,system-ui,sans-serif;padding:9px 12px;border-radius:8px;text-decoration:none;opacity:.85}.dc-back:hover{opacity:1}</style>
+
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1100}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { open: { g0: true, g1: true }, sel: {}, dlg: '', toast: '' }; }
+renderVals() {
+const st = this.state; const set = (o) => this.setState(o);
+const U = ['Unverified', 'nt'], V = ['Verified', 'ok'];
+const G = [
+{ k:'g0', customer:'Sample Client A', site:'Sample Site 01', state:'NSW', rows:[{ id:'6376', model:'Mindray D1 Public', serial:'FQ5B003701', loc:'Ground floor', part:'Battery - 4 Years', date:'01/12/2026', v:V, status:'Due soon', cls:'wn' }] },
+{ k:'g1', customer:'Sample Client B', site:'Sample Site 02', state:'QLD', rows:[{ id:'7319', model:'ZOLL AED Plus', serial:'X21B114209', loc:'Reception', part:'Adult pad - 5 years', date:'12/03/2021', v:U, status:'Expired', cls:'bd2' },{ id:'7320', model:'ZOLL AED Plus', serial:'X21B114288', loc:'Level 2 kitchen', part:'Battery - 5 Years', date:'22/11/2026', v:V, status:'Due soon', cls:'wn' }] },
+{ k:'g2', customer:'Sample Client C', site:'Sample Site 03', state:'VIC', rows:[{ id:'5120', model:'Philips HeartStart HS1', serial:'A17E-02291', loc:'Gym entrance', part:'Paediatric pad - 2 years', date:'23/02/2018', v:U, status:'Expired', cls:'bd2' }] },
+{ k:'g3', customer:'Unassigned', site:'Sample Site 05', state:'NSW', rows:[{ id:'4471', model:'Cardiac Science Powerheart G3', serial:'1700300551', loc:'Foyer', part:'Battery - 5 Years', date:'09/06/2022', v:U, status:'Expired', cls:'bd2' }] }
+];
+const tog = (id) => { const n = Object.assign({}, st.sel); n[id] = !n[id]; set({ sel: n }); };
+const selIds = Object.keys(st.sel).filter((k) => st.sel[k]);
+return {
+shown: G.length,
+groups: G.map((g) => { const allOn = g.rows.every((r) => st.sel[r.id]); const bad = g.rows.some((r) => r.cls === 'bd2'); return { customer: g.customer, site: g.site, state: g.state, count: g.rows.length, open: !!st.open[g.k], rot: st.open[g.k] ? 180 : 0, worst: bad ? 'Expired' : 'Due soon', worstCls: bad ? 'bd2' : 'wn',
+  toggle: () => { const n = Object.assign({}, st.open); n[g.k] = !n[g.k]; set({ open: n }); }, selOn: allOn ? 'on' : '',
+  toggleSel: () => { const n = Object.assign({}, st.sel); g.rows.forEach((r) => { n[r.id] = !allOn; }); set({ sel: n }); },
+  rows: g.rows.map((r) => Object.assign({}, r, { ver: r.v[0], vcls: r.v[1], on: st.sel[r.id] ? 'on' : '', toggle: () => tog(r.id) })) }; }),
+expandAll: () => { const n = {}; G.forEach((g) => { n[g.k] = true; }); set({ open: n }); }, collapseAll: () => set({ open: {} }),
+hasSel: selIds.length > 0, selCount: selIds.length, clearSel: () => set({ sel: {} }),
+doSearch: () => set({ toast: 'Results updated' }), more: () => set({ toast: 'Loading the next 50 sites' }),
+o_confirm: () => set({ dlg: 'confirm' }), d_confirm: st.dlg === 'confirm', ok_confirm: () => set({ dlg: '', sel: {}, toast: 'Dates confirmed and logged' }),
+o_export: () => set({ dlg: 'export' }), d_export: st.dlg === 'export', ok_export: () => set({ dlg: '', toast: 'Export started. The CSV will download when ready.' }),
+closeDlg: () => set({ dlg: '' }), hasToast: !!st.toast, toast: st.toast, hideToast: () => set({ toast: '' })
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reports</title>
+<script src="react-vendor.js"></script>
+<script src="dc-lite.js"></script>
+<link rel="stylesheet" href="ds.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>body{margin:0;font-family:Inter,system-ui,sans-serif}</style>
+
+</head>
+<body>
+<template id="dc-tpl">
+
+<div class="app">
+<nav class="side">
+<div class="brand"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="#d8352a" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.8 4.5 6.5 4.5c2 0 3.7 1.1 5.5 3.2 1.8-2.1 3.5-3.2 5.5-3.2 3.7 0 5.600 3.900 4.100 7.300C19.500 16.400 12 21 12 21z"/></svg></span>AEDS</div>
+<a class="nv" href="Main.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Dashboard</a>
+<a class="nv" href="Customers.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg>Customers</a>
+<a class="nv" href="Sites.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Sites</a>
+<a class="nv" href="Contacts.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Contacts</a>
+<a class="nv" href="Assets.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5-9-10.5C2.600 7 5 4.500 8 4.500c1.800 0 3.200 1 4 2.500.8-1.500 2.200-2.500 4-2.500 3 0 5.400 2.500 5 6C20 16 12 21 12 21z"/></svg>Assets</a>
+<a class="nv" href="Compliance.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Compliance<span class="bd">12,908</span></a>
+<a class="nv on" href="Reports.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Reports</a>
+<div class="gl">Admin</div>
+<a class="nv" href="Audit.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Audit log</a>
+<a class="nv" href="People.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.9.3 5.5 2.2 5.5 5.8"/></svg>People</a>
+<a class="nv" href="Models.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>Asset settings</a>
+<a class="nv" href="Merge.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v6a4 4 0 004 4h8M18 14l-3-3M18 14l-3 3M6 20V14"/></svg>Site transfers</a>
+<div class="who"><span class="av">AD</span><div>Sample Admin<small>Administrator</small></div></div>
+</nav>
+<main class="main">
+<div class="top"><label class="search"><input aria-label="Search" placeholder="Search customers, sites, serial numbers"><span class="kbd">/</span></label><span class="role">Role: Administrator</span></div>
+<div class="ph"><div><div class="crumb">Reports</div><div class="h1">Reports</div><div class="sub">A fixed set agreed with AEDS. Every report uses the same OK, due soon and expired rule.</div></div></div>
+<div class="g3 mb">
+<div class="card"><div class="ch">Due list</div><p class="sub" style="margin-bottom:12px">Every AED that is expired or due within 90 days.</p>
+<div class="f" style="margin-bottom:10px"><label for="d1">Window</label><select id="d1" class="fi"><option>Expired and due in 90 days</option><option>Expired only</option><option>Due in 90 days</option></select></div>
+<div class="f" style="margin-bottom:14px"><label for="d2">State</label><select id="d2" class="fi"><option>All states</option><option>NSW</option><option>VIC</option></select></div>
+<div class="acts"><button class="btn" onClick="{{ok_csv}}">Export CSV</button><a class="btn sec" href="Compliance.dc.html">View on screen</a></div></div>
+<div class="card"><div class="ch">Register export</div><p class="sub" style="margin-bottom:12px">All AEDs and cabinets with customer, site, model, serial and compliance status.</p>
+<div class="f" style="margin-bottom:10px"><label for="r1">Customer</label><select id="r1" class="fi"><option>All customers</option><option>Sample Client A</option></select></div>
+<div class="f" style="margin-bottom:14px"><label for="r2">Include</label><select id="r2" class="fi"><option>Active assets</option><option>Active and removed</option></select></div>
+<div class="acts"><button class="btn" onClick="{{ok_csv}}">Export CSV</button></div></div>
+<div class="card"><div class="ch">Service history</div><p class="sub" style="margin-bottom:12px">Service visits in a date range, with results and parts fitted. Internal notes included for staff.</p>
+<div class="f" style="margin-bottom:10px"><label for="s1">From</label><input id="s1" class="fi" value="01/10/2026"></div>
+<div class="f" style="margin-bottom:14px"><label for="s2">To</label><input id="s2" class="fi" value="04/11/2026"></div>
+<div class="acts"><button class="btn" onClick="{{ok_csv}}">Export CSV</button></div></div>
+</div>
+<div class="g2">
+<div class="card"><div class="ch">Compliance certificate (PDF)</div><p class="sub" style="margin-bottom:12px">One certificate per AED, from the AEDS template. Can be shared to the customer portal.</p>
+<div class="f" style="margin-bottom:12px"><label for="c1">AED</label><select id="c1" class="fi"><option>Defibrillator 01, Sample Site 07</option></select></div>
+<div class="acts"><button class="btn" onClick="{{ok_pdf}}">Generate PDF</button><button class="btn sec" onClick="{{o_share}}">Share with customer</button></div></div>
+<div class="card"><div class="ch">Service report (PDF)</div><p class="sub" style="margin-bottom:12px">One report per service visit: test result, parts fitted, customer notes. Internal notes are never printed.</p>
+<div class="f" style="margin-bottom:12px"><label for="v1">Visit</label><select id="v1" class="fi"><option>28/11/2025, Defibrillator 01</option></select></div>
+<div class="acts"><button class="btn" onClick="{{ok_pdf}}">Generate PDF</button><a class="btn sec" href="Visit.dc.html">Open visit</a></div></div>
+</div>
+</main>
+<template data-sc="if" value="{{d_csv}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh"><button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_csv}}">x</button></div></div></div></template>
+<template data-sc="if" value="{{d_pdf}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh"><button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_pdf}}">x</button></div></div></div></template>
+<template data-sc="if" value="{{d_share}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Share with customer<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><label class="chk" style="font-size:13px"><input type="checkbox" checked> Show in the customer portal</label><label class="chk" style="font-size:13px"><input type="checkbox"> Email the portal users at Sample Client A</label></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_share}}">Share</button></div></div></div></template>
+<template data-sc="if" value="{{hasToast}}" hint-placeholder-val="{{ false }}"><div class="toast">{{toast}}<button onClick="{{hideToast}}">Dismiss</button></div></template>
+</div>
+</template>
+<div id="dc-root"></div>
+<a class="dc-back" href="index.html" title="All screens">All screens</a>
+<style>.dc-back{position:fixed;right:14px;bottom:14px;z-index:999;background:#0f1b2d;color:#fff;font:600 12px/1 Inter,system-ui,sans-serif;padding:9px 12px;border-radius:8px;text-decoration:none;opacity:.85}.dc-back:hover{opacity:1}</style>
+
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":940}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { dlg: '', toast: '' }; }
+renderVals() {
+return {
+closeDlg: () => this.setState({ dlg: '' }), hasToast: !!this.state.toast, toast: this.state.toast, hideToast: () => this.setState({ toast: '' }),
+o_csv: () => this.setState({ dlg: 'csv' }), d_csv: this.state.dlg === 'csv', ok_csv: () => this.setState({ dlg: '', toast: 'Export started. The CSV will download when ready.' }),
+o_pdf: () => this.setState({ dlg: 'pdf' }), d_pdf: this.state.dlg === 'pdf', ok_pdf: () => this.setState({ dlg: '', toast: 'PDF created' }),
+o_share: () => this.setState({ dlg: 'share' }), d_share: this.state.dlg === 'share', ok_share: () => this.setState({ dlg: '', toast: 'Shared with customer' }),
+};
+}
+}
+</script>
+</body>
+</html>

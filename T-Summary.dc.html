@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Visit: summary</title>
+<script src="react-vendor.js"></script>
+<script src="dc-lite.js"></script>
+<link rel="stylesheet" href="ds.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>body{margin:0;font-family:Inter,system-ui,sans-serif}</style>
+
+</head>
+<body>
+<template id="dc-tpl">
+
+<div class="tpage">
+<div class="tbar"><a href="T-Photos.dc.html">&lt; Photos</a><span>Defibrillator 01</span><span class="steps"><span>Asset</span><span>Parts</span><span>Tests</span><span>Photos</span><span class="on">Summary</span></span></div>
+<div class="tbody">
+<div class="th" style="margin-bottom:14px">Review and submit</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div class="tc"><div class="cm" style="margin-bottom:8px">Parts replaced</div>
+<div class="li"><span>Battery</span><span class="tag ok">New due 03/11/2031</span></div>
+<div class="li"><span>Adult pads</span><span class="tag ok">New due 03/11/2031</span></div>
+<div class="li"><span>Paediatric pads</span><span class="tag nt">Not changed</span></div></div>
+<div class="tc"><div class="cm" style="margin-bottom:8px">Test readings</div>
+<div class="li"><span>5 checks</span><span class="tag ok">5 pass</span></div>
+<div class="li"><span>Photos</span><span class="tag in">2 added, 1 shared</span></div>
+<div class="li"><span>Notes</span><span class="cs">None</span></div></div>
+</div>
+<div class="tc" style="margin-top:14px;display:flex;align-items:center;gap:16px"><div style="flex:1"><div class="cm" style="margin-bottom:6px">Technician sign-off</div><div class="cs">Sample Technician · 03/11/2026</div></div><div class="ph2" style="width:260px;height:70px">Signature (sample)</div></div>
+<div style="display:flex;justify-content:space-between;margin-top:16px"><a class="tbtn sec" href="T-Photos.dc.html">Back</a><a class="tbtn" href="T-Today.dc.html">Submit visit</a></div>
+</div>
+</div>
+</template>
+<div id="dc-root"></div>
+<a class="dc-back" href="index.html" title="All screens">All screens</a>
+<style>.dc-back{position:fixed;right:14px;bottom:14px;z-index:999;background:#0f1b2d;color:#fff;font:600 12px/1 Inter,system-ui,sans-serif;padding:9px 12px;border-radius:8px;text-decoration:none;opacity:.85}.dc-back:hover{opacity:1}</style>
+
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1024,"height":768}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

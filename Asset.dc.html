@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Asset detail</title>
+<script src="react-vendor.js"></script>
+<script src="dc-lite.js"></script>
+<link rel="stylesheet" href="ds.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>body{margin:0;font-family:Inter,system-ui,sans-serif}</style>
+
+</head>
+<body>
+<template id="dc-tpl">
+
+<div class="app">
+<nav class="side">
+<div class="brand"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="#d8352a" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.8 4.5 6.5 4.5c2 0 3.7 1.1 5.5 3.2 1.8-2.1 3.5-3.2 5.5-3.2 3.7 0 5.600 3.900 4.100 7.300C19.500 16.400 12 21 12 21z"/></svg></span>AEDS</div>
+<a class="nv" href="Main.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Dashboard</a>
+<a class="nv" href="Customers.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg>Customers</a>
+<a class="nv" href="Sites.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Sites</a>
+<a class="nv" href="Contacts.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Contacts</a>
+<a class="nv on" href="Assets.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5-9-10.5C2.600 7 5 4.500 8 4.500c1.800 0 3.200 1 4 2.500.8-1.500 2.200-2.500 4-2.500 3 0 5.400 2.500 5 6C20 16 12 21 12 21z"/></svg>Assets</a>
+<a class="nv" href="Compliance.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Compliance<span class="bd">12,908</span></a>
+<a class="nv" href="Reports.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Reports</a>
+<div class="gl">Admin</div>
+<a class="nv" href="Audit.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Audit log</a>
+<a class="nv" href="People.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.9.3 5.5 2.2 5.5 5.8"/></svg>People</a>
+<a class="nv" href="Models.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>Asset settings</a>
+<a class="nv" href="Merge.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v6a4 4 0 004 4h8M18 14l-3-3M18 14l-3 3M6 20V14"/></svg>Site transfers</a>
+<div class="who"><span class="av">AD</span><div>Sample Admin<small>Administrator</small></div></div>
+</nav>
+<main class="main">
+<div class="top"><label class="search"><input aria-label="Search" placeholder="Search customers, sites, serial numbers"><span class="kbd">/</span></label><span class="role">Role: Administrator</span></div>
+<div class="ph"><div class="phl"><a class="back" href="Assets.dc.html" aria-label="Back" title="Back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a><div><div class="crumb"><a href="Assets.dc.html">Assets</a> / <a href="Site.dc.html">Sample Site 07</a> / Defibrillator 01</div><div class="h1">Defibrillator 01</div><div class="sub">Serial SAMPLE-0001 · <a href="Site.dc.html">Sample Site 07</a> · <span class="tag bd2">Past due, unverified</span></div></div></div>
+<div class="acts"><span class="opt"><span class="b" tabindex="0" style="height:38px">Options</span><span class="mn"><button onClick="{{o_transfer}}">Transfer to another site</button><button onClick="{{o_copy}}">Copy asset</button><button onClick="{{o_archive}}">Archive asset</button></span></span><button class="btn sec" onClick="{{o_verify}}">Verify dates</button><button class="btn" onClick="{{o_record}}">Record service</button></div></div>
+
+<div class="tabs">
+<template data-sc="for" list="{{tabs}}" as="t" hint-placeholder-count="5"><button class="tab {{t.cls}}" onClick="{{t.pick}}">{{t.label}}</button></template>
+</div>
+
+<template data-sc="if" value="{{isDetails}}" hint-placeholder-val="{{ true }}">
+<div class="gm">
+<div class="card">
+<div class="grp"><div class="gt">Defibrillator</div><div class="fg"><div class="f"><label for="ty">Asset type</label><select id="ty" class="fi"><option>Defibrillator</option><option>Cabinet</option></select></div><div class="f"><label>Site</label><a class="fi ro" href="Site.dc.html" style="display:block">Sample Site 07</a></div><div class="f"><label for="aid">Asset ID</label><input id="aid" class="fi ro" value="4904" readonly></div><div class="f"><label for="mo">AED model</label><select id="mo" class="fi"><option>Mindray D1 Public</option><option>ZOLL AED Plus</option></select></div><div class="f"><label for="sn">AED serial number</label><input id="sn" class="fi" value="SAMPLE-0001"></div><div class="f"><label for="an">AEDS asset number</label><input id="an" class="fi" value="1234"></div><div class="f"><label for="lo">Location on site</label><input id="lo" class="fi" value="Main foyer"></div><div class="f"><label for="pd">Purchase date</label><input id="pd" class="fi" value="12/03/2016"></div><div class="f"><label for="ins">Start date</label><input id="ins" class="fi" value="12/03/2016"></div><div class="f"><label for="ct">Contract</label><select id="ct" class="fi"><option>Not selected</option><option>Sample contract</option></select></div><div class="f"><label for="do">Display order</label><input id="do" class="fi" value="1"></div><div class="f"><label for="st">Status</label><select id="st" class="fi"><option>In service</option><option>Removed</option></select></div></div></div>
+<div class="grp"><div class="gt">Cabinet</div><div class="fg"><div class="f"><label for="cm">Cabinet model</label><select id="cm" class="fi"><option>Not selected</option><option>100 Series</option><option>320 Series</option><option>50 Series</option><option>Aivia Go</option></select></div><div class="f"><label for="cs">Cabinet serial number</label><input id="cs" class="fi" value="SAMPLE-C001"></div><div class="f"><label>Codes</label><div class="fi ro">Stored encrypted, see right</div></div></div></div>
+<div class="grp"><div class="gt">Monitoring</div><div class="fg"><div class="f"><label for="ca">Communications</label><select id="ca" class="fi"><option>Not selected</option><option>Optus</option><option>Telstra</option><option>Sigfox</option><option>Vodafone NZ</option></select></div><div class="f"><label for="mp">Monitoring renewal option</label><select id="mp" class="fi"><option>Not selected</option><option>Service Contract</option><option>Monitoring & Programming</option><option>Sigfox</option></select></div><div class="f"><label for="mr">Monitoring renews on</label><input id="mr" class="fi" value="01/07/2027"></div><div class="f s2"><label for="sc">SIM card number</label><input id="sc" class="fi" value="8961 0000 0000 0000 000"></div><div class="f"><label for="sp">SIM phone number</label><input id="sp" class="fi" value="0400 000 000"></div></div></div>
+<div class="grp"><div class="gt">Notes</div><textarea class="fi" rows="3" aria-label="Notes">Sample note</textarea></div>
+<div class="bar"><a class="btn sec" href="Assets.dc.html">Cancel</a><button class="btn" onClick="{{ok_save}}">Save changes</button></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div class="card"><div class="ch">Cabinet codes <span>Admins and technicians read</span></div>
+<div class="lock"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>Keypad code <b style="margin-left:auto;letter-spacing:.2em">{{kp}}</b></div>
+<div class="lock" style="margin-top:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>Maintenance code <b style="margin-left:auto;letter-spacing:.2em">{{mc}}</b></div>
+<div class="acts" style="margin-top:12px"><button class="btn sec sm" onClick="{{revealBtn}}">{{revealLabel}}</button></div>
+<p class="hint">Each reveal is logged with user and time (decision D7). Stored encrypted, never shown in the portal.</p></div>
+<div class="card"><div class="ch">Compliance summary</div>
+<div class="li"><span>AED status</span><span class="tag {{aedCls}}">{{aedStatus}}</span></div>
+<div class="li"><span>Adult pad - 5 years</span><span>10/08/2027</span></div>
+<div class="li"><span>Battery - 5 Years</span><span>10/08/2027</span></div><button class="btnl" style="margin-top:10px" onClick="{{goLevels}}">Pads and batteries</button></div>
+</div>
+</div>
+</template>
+
+<template data-sc="if" value="{{isLevels}}" hint-placeholder-val="{{ false }}">
+<div class="card"><div class="ch">Pads and batteries <span>Due soon = within 90 days (P4)</span></div>
+<div class="fg" style="grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:16px"><div class="f"><label for="sl0">Installed (start date)</label><input id="sl0" class="fi" value="10/08/2022"></div><div class="f"><label>AED status</label><div><span class="tag {{aedCls}}">{{aedStatus}}</span></div></div></div>
+<div class="f" style="margin-bottom:6px"><label for="sl1">Fit a new part</label><div style="display:flex;gap:12px;max-width:720px"><select id="sl1" class="fi" style="flex:1"><option>None selected</option><option>Adult pad - 5 years</option><option>Adult pad - 2 years</option><option>Paediatric pad - 2 years</option><option>Multi-function pad - 4.5 years</option><option>Battery - 5 Years</option><option>Battery - 4 Years</option></select><input class="fi" style="width:160px" placeholder="Fitted date" aria-label="Fitted date"><button class="btn" onClick="{{addLevel}}">Fit part</button></div><div class="hint">Expiry is set from the part's lifespan. Fitting a part of the same kind retires the current one; nothing is overwritten.</div></div>
+<div class="tw" style="margin-top:12px"><table class="tbl"><thead><tr><th>Current part (service level)</th><th class="r">Years</th><th class="r">Months</th><th>Fitted</th><th>Expiry date</th><th>Date checked</th><th>Status</th><th></th></tr></thead><tbody>
+<template data-sc="for" list="{{levels}}" as="l" hint-placeholder-count="2"><tr><td class="cm">{{l.name}}</td><td class="r">{{l.y}}</td><td class="r">{{l.m}}</td><td>{{l.fitted}}</td><td>{{l.date}}</td><td><span class="tag {{l.vcls}}">{{l.ver}}</span></td><td><span class="tag {{l.cls}}">{{l.status}}</span></td><td class="r"><span class="opt"><span class="b" tabindex="0">Options</span><span class="mn"><button onClick="{{l.confirm}}">Confirm date</button><button onClick="{{l.replace}}">Fit replacement</button><button onClick="{{l.remove}}">Retire without replacement</button></span></span></td></tr></template>
+</tbody></table></div>
+<div style="font-size:14px;font-weight:600;margin:18px 0 8px">Retired parts</div>
+<div class="tw"><table class="tbl"><thead><tr><th>Part</th><th>Fitted</th><th>Expiry date</th><th>Retired</th><th>Retired by</th></tr></thead><tbody>
+<template data-sc="for" list="{{retired}}" as="r" hint-placeholder-count="1"><tr><td>{{r.name}}</td><td>{{r.fitted}}</td><td>{{r.date}}</td><td>{{r.on}}</td><td>{{r.by}}</td></tr></template>
+</tbody></table></div>
+<p class="hint" style="margin-top:10px">Dates migrated from Simpro are "Unverified" until a technician confirms them on a visit (D1).</p></div>
+</template>
+
+<template data-sc="if" value="{{isTests}}" hint-placeholder-val="{{ false }}">
+<div class="card"><div class="ch">Service history</div>
+<div class="tw"><table class="tbl mx"><thead><tr><th>Visit</th><th>Technician</th><th>AIVIA status</th><th>AED status</th><th>Shock tested</th><th>Base plate</th><th>Optical sensor</th><th>Result</th></tr></thead><tbody>
+<tr><td>28/11/2025</td><td><a href="Visit.dc.html">Sample Technician</a></td><td>Pass</td><td>Pass</td><td>Pass</td><td>Pass</td><td>Pass</td><td><span class="tag ok">Passed</span></td></tr>
+<tr><td>28/11/2024</td><td><a href="Visit.dc.html">Sample Technician</a></td><td>Pass</td><td>Fail</td><td>Pass</td><td>Pass</td><td>Pass</td><td><span class="tag wn">Action taken</span></td></tr>
+</tbody></table></div>
+</div>
+</template>
+
+<template data-sc="if" value="{{isRelated}}" hint-placeholder-val="{{ false }}">
+<div class="card"><div class="ch">Related assets <span><button class="btn sm" onClick="{{o_link}}">Link asset</button></span></div>
+<a class="li" href="Asset.dc.html"><span>Cabinet 01<div class="cs">Holds this defibrillator</div></span><span class="tag nt">Cabinet</span></a>
+<a class="li" href="Asset.dc.html"><span>Monitoring 01<div class="cs">SIM-based monitoring</div></span><span class="tag nt">Monitoring service</span></a></div>
+</template>
+
+<template data-sc="if" value="{{isFiles}}" hint-placeholder-val="{{ false }}">
+<div class="card"><div class="ch">Attachments <span><button class="btn sm" onClick="{{o_upload}}">Upload file</button></span></div>
+<div class="tw"><table class="tbl"><thead><tr><th>File</th><th>Added</th><th>Share with customer</th></tr></thead><tbody>
+<tr><td class="cm">Service report 2025.pdf</td><td>28/11/2025</td><td><span class="tag ok">Shared</span></td></tr>
+<tr><td class="cm">Unit photo.jpg</td><td>28/11/2025</td><td><span class="tag nt">Internal</span></td></tr>
+</tbody></table></div></div>
+</template>
+
+</main>
+<template data-sc="if" value="{{d_transfer}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Transfer to another site<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><div class="f"><label for="t1">New site</label><select id="t1" class="fi"><option>Sample Site 12 (Sample Client B)</option><option>Sample Site 15 (Sample Client A)</option></select></div><div class="f"><label for="t2">Effective date</label><input id="t2" class="fi" value="04/11/2026" placeholder=""></div><div class="f"><label for="t3">Reason</label><input id="t3" class="fi" value="" placeholder="Required"></div><p class="hint">Service levels, visits and files move with the asset.</p></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_transfer}}">Transfer</button></div></div></div></template>
+<template data-sc="if" value="{{d_copy}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Copy asset<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><p>Creates a new asset at the same site with the same model, cabinet and service levels. Serial number, codes and history are not copied.</p><div class="f"><label for="c1">New serial number</label><input id="c1" class="fi" value="" placeholder="Optional"></div></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_copy}}">Create copy</button></div></div></div></template>
+<template data-sc="if" value="{{d_archive}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Archive asset<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><div class="f"><label for="a1">Reason</label><select id="a1" class="fi"><option>Removed from site</option><option>Replaced</option><option>End of life</option><option>Duplicate record</option></select></div><p class="hint">The asset leaves due lists and the portal. History stays.</p></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_archive}}">Archive</button></div></div></div></template>
+<template data-sc="if" value="{{d_verify}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Verify dates<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><p class="sub">Confirm the dates migrated from Simpro. Verified dates lose the "unverified" flag.</p><div class="fg c2"><div class="f"><label for="v1">Battery expiry</label><input id="v1" class="fi" value="06/02/2021" placeholder=""></div><div class="f"><label for="v2">Adult pad expiry</label><input id="v2" class="fi" value="06/02/2019" placeholder=""></div></div><label class="chk" style="font-size:13px"><input type="checkbox" checked> Checked on site today</label></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_verify}}">Mark verified</button></div></div></div></template>
+<template data-sc="if" value="{{d_reveal}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Reveal cabinet codes<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><div class="f"><label for="r1">Reason</label><select id="r1" class="fi"><option>On site for service</option><option>Customer asked by phone</option><option>Other</option></select></div><p class="hint">Codes show for 60 seconds. Your name, the time and the reason go to the audit log.</p></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_reveal}}">Reveal</button></div></div></div></template>
+<template data-sc="if" value="{{d_addl}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Add service level<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><div class="f"><label for="l1">Service level</label><select id="l1" class="fi"><option>Adult pad - 2 years</option><option>Adult pad - 5 years</option><option>Battery - 4 Years</option><option>Battery - 5 Years</option><option>Multi-function pad - 4.5 years</option><option>Paediatric - 2 years</option><option>Spare adult pad</option></select></div><div class="f"><label for="l2">Service date</label><input id="l2" class="fi" value="04/11/2026" placeholder=""></div><p class="hint">The due date is the service date plus the lifespan.</p></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_addl}}">Add</button></div></div></div></template>
+<template data-sc="if" value="{{d_link}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Link asset<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><div class="f"><label for="k1">Asset at this site</label><select id="k1" class="fi"><option>Cabinet 4905 (100 Series)</option></select></div><div class="f"><label for="k2">Relationship</label><select id="k2" class="fi"><option>Cabinet holds this defibrillator</option><option>Child asset</option></select></div></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_link}}">Link</button></div></div></div></template>
+<template data-sc="if" value="{{d_upload}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Upload file<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><div class="ph2" style="width:100%;height:110px">Drop files here or choose files</div><label class="chk" style="font-size:13px"><input type="checkbox"> Share with customer (shows in the portal)</label></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_upload}}">Upload</button></div></div></div></template>
+<template data-sc="if" value="{{hasToast}}" hint-placeholder-val="{{ false }}"><div class="toast">{{toast}}<button onClick="{{hideToast}}">Dismiss</button></div></template>
+<template data-sc="if" value="{{d_record}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Record service: asset 4904<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"><div class="fg c2"><div class="f"><label for="rv1">Service date</label><input id="rv1" class="fi" value="04/11/2026" placeholder=""></div><div class="f"><label for="rv2">Technician</label><select id="rv2" class="fi"><option>Sample Technician</option><option>Sample Admin</option></select></div></div><div class="sh">Test readings</div><div class="lr" style="padding:6px 0;border-bottom:1px solid #edf1f6"><span>AIVIA status</span><select class="fi" style="width:130px" aria-label="AIVIA status"><option>Pass</option><option>Fail</option><option>N/A</option></select></div><div class="lr" style="padding:6px 0;border-bottom:1px solid #edf1f6"><span>AED status</span><select class="fi" style="width:130px" aria-label="AED status"><option>Pass</option><option>Fail</option><option>N/A</option></select></div><div class="lr" style="padding:6px 0;border-bottom:1px solid #edf1f6"><span>AED shock tested</span><select class="fi" style="width:130px" aria-label="AED shock tested"><option>Pass</option><option>Fail</option><option>N/A</option></select></div><div class="lr" style="padding:6px 0;border-bottom:1px solid #edf1f6"><span>Base plate secure</span><select class="fi" style="width:130px" aria-label="Base plate secure"><option>Pass</option><option>Fail</option><option>N/A</option></select></div><div class="lr" style="padding:6px 0;border-bottom:1px solid #edf1f6"><span>Optical sensor static green</span><select class="fi" style="width:130px" aria-label="Optical sensor static green"><option>Pass</option><option>Fail</option><option>N/A</option></select></div><div class="sh">Parts replaced</div><div class="fg c2"><label class="chk" style="font-size:13px"><input type="checkbox"> Battery (new expiry 04/11/2030)</label><label class="chk" style="font-size:13px"><input type="checkbox"> Adult pads (new expiry 04/11/2028)</label><label class="chk" style="font-size:13px"><input type="checkbox"> Paediatric pads</label><label class="chk" style="font-size:13px"><input type="checkbox"> Spare adult pad</label></div><div class="f"><label for="rv3">Note for the customer</label><textarea id="rv3" class="fi" rows="3"></textarea></div><div class="f"><label for="rv4">Internal note (staff only)</label><textarea id="rv4" class="fi" rows="3"></textarea></div></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_record}}">Save visit</button></div></div></div></template>
+<template data-sc="if" value="{{d_save}}" hint-placeholder-val="{{ false }}"><div class="ovl"><div class="dlg mdl"><div class="mh">Save<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div><div class="mb"></div><div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{ok_save}}">Save</button></div></div></div></template>
+</div>
+</template>
+<div id="dc-root"></div>
+<a class="dc-back" href="index.html" title="All screens">All screens</a>
+<style>.dc-back{position:fixed;right:14px;bottom:14px;z-index:999;background:#0f1b2d;color:#fff;font:600 12px/1 Inter,system-ui,sans-serif;padding:9px 12px;border-radius:8px;text-decoration:none;opacity:.85}.dc-back:hover{opacity:1}</style>
+
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":940}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { dlg: '', toast: '',  tab: 'details', lv: null, rt: null }; }
+renderVals() {
+const defs = [['details','Details'],['levels','Pads and batteries'],['tests','Service history'],['related','Related assets'],['files','Attachments']];
+const LV = this.state.lv || [{ name:'Adult pad - 5 years', y:5, m:0, fitted:'10/08/2022', date:'10/08/2027', v:false },{ name:'Battery - 5 Years', y:5, m:0, fitted:'10/08/2022', date:'10/08/2027', v:false }];
+const RT = this.state.rt || [{ name:'Adult pad - 2 years', fitted:'10/08/2020', date:'10/08/2022', on:'10/08/2022', by:'Migrated from Simpro' }];
+const stat = (d) => { const p = d.split('/'); const t = new Date(+p[2], +p[1] - 1, +p[0]); const now = new Date(2026, 10, 5); const days = Math.round((t - now) / 86400000); return days < 0 ? ['Expired', 'bd2'] : days <= 90 ? ['Due soon', 'wn'] : ['OK', 'ok']; };
+const worst = LV.map((l) => stat(l.date)[0]); const aed = worst.indexOf('Expired') >= 0 ? ['Expired', 'bd2'] : worst.indexOf('Due soon') >= 0 ? ['Due soon', 'wn'] : ['OK', 'ok'];
+const retire = (i, msg) => this.setState({ lv: LV.filter((x, j) => j !== i), rt: [Object.assign({}, LV[i], { on: '05/11/2026', by: 'Sample Admin' })].concat(RT), toast: msg });
+const cur = this.state.tab;
+return {
+o_record: () => this.setState({ dlg: 'record' }), d_record: this.state.dlg === 'record', ok_record: () => this.setState({ dlg: '', toast: 'Visit saved. New due dates set.' }),
+o_save: () => this.setState({ dlg: 'save' }), d_save: this.state.dlg === 'save', ok_save: () => this.setState({ dlg: '', toast: 'Asset saved' }),
+
+closeDlg: () => this.setState({ dlg: '' }), hasToast: !!this.state.toast, toast: this.state.toast, hideToast: () => this.setState({ toast: '' }),
+o_transfer: () => this.setState({ dlg: 'transfer' }), d_transfer: this.state.dlg === 'transfer', ok_transfer: () => this.setState({ dlg: '', toast: 'Asset transferred to Sample Site 12' }),
+o_copy: () => this.setState({ dlg: 'copy' }), d_copy: this.state.dlg === 'copy', ok_copy: () => this.setState({ dlg: '', toast: 'Copy created as asset 6013' }),
+o_archive: () => this.setState({ dlg: 'archive' }), d_archive: this.state.dlg === 'archive', ok_archive: () => this.setState({ dlg: '', toast: 'Asset archived' }),
+o_verify: () => this.setState({ dlg: 'verify' }), d_verify: this.state.dlg === 'verify', ok_verify: () => this.setState({ dlg: '', toast: 'Dates verified' }),
+o_reveal: () => this.setState({ dlg: 'reveal' }), d_reveal: this.state.dlg === 'reveal', ok_reveal: () => this.setState({ dlg: '', toast: 'Codes shown for 60 seconds. This view is logged.' }),
+o_addl: () => this.setState({ dlg: 'addl' }), d_addl: this.state.dlg === 'addl', ok_addl: () => this.setState({ dlg: '', toast: 'Service level added' }),
+o_link: () => this.setState({ dlg: 'link' }), d_link: this.state.dlg === 'link', ok_link: () => this.setState({ dlg: '', toast: 'Asset linked' }),
+o_upload: () => this.setState({ dlg: 'upload' }), d_upload: this.state.dlg === 'upload', ok_upload: () => this.setState({ dlg: '', toast: 'File uploaded' }),
+kp: this.state.rev ? '4821' : '••••••', mc: this.state.rev ? '1907' : '••••••', revealLabel: this.state.rev ? 'Hide codes' : 'Reveal codes', revealBtn: () => this.state.rev ? this.setState({ rev: false }) : this.setState({ dlg: 'reveal' }),
+ok_reveal: () => this.setState({ dlg: '', rev: true, toast: 'Codes shown. This view is logged.' }),
+
+levels: LV.map((l, i) => ({ name: l.name, y: l.y, m: l.m, fitted: l.fitted, date: l.date, ver: l.v ? 'Verified' : 'Unverified', vcls: l.v ? 'ok' : 'nt', status: stat(l.date)[0], cls: stat(l.date)[1],
+  confirm: () => this.setState({ lv: LV.map((x, j) => j === i ? Object.assign({}, x, { v: true }) : x), toast: 'Date confirmed. Logged with your name and time.' }),
+  replace: () => { const n = LV.map((x, j) => j === i ? Object.assign({}, x, { fitted: '05/11/2026', date: '05/11/2031', v: true }) : x); this.setState({ lv: n, rt: [Object.assign({}, LV[i], { on: '05/11/2026', by: 'Sample Admin' })].concat(RT), toast: 'New part fitted. The old part moved to Retired parts.' }); },
+  remove: () => retire(i, 'Part retired. It stays in the history.') })),
+retired: RT, aedStatus: aed[0] + (LV.some((l) => !l.v) ? ', unverified' : ''), aedCls: aed[1],
+addLevel: () => this.setState({ lv: LV.concat([{ name:'Paediatric pad - 2 years', y:2, m:0, fitted:'05/11/2026', date:'05/11/2028', v:true }]), toast: 'Part fitted. Expiry set to 05/11/2028 from its lifespan.' }),
+goLevels: () => this.setState({ tab: 'levels' }),
+tabs: defs.map((d) => ({ label: d[1], cls: d[0] === cur ? 'on' : '', pick: () => this.setState({ tab: d[0] }) })),
+isDetails: cur === 'details', isLevels: cur === 'levels', isTests: cur === 'tests', isRelated: cur === 'related', isFiles: cur === 'files'
+};
+}
+}
+</script>
+</body>
+</html>

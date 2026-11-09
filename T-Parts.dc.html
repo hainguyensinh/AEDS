@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Visit: parts</title>
+<script src="react-vendor.js"></script>
+<script src="dc-lite.js"></script>
+<link rel="stylesheet" href="ds.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>body{margin:0;font-family:Inter,system-ui,sans-serif}</style>
+
+</head>
+<body>
+<template id="dc-tpl">
+
+<div class="tpage">
+<div class="tbar"><a href="T-Asset.dc.html">&lt; Asset</a><span>Defibrillator 01</span><span class="steps"><span>Asset</span><span class="on">Parts</span><span>Tests</span><span>Photos</span><span>Summary</span></span></div>
+<div class="tbody">
+<div class="th" style="margin-bottom:4px">Parts replaced</div>
+<p class="sub" style="font-size:15px;margin-bottom:16px">Tap Replaced for each item you changed. New due dates are set from the service interval.</p>
+<div class="tc">
+<template data-sc="for" list="{{rows}}" as="r" hint-placeholder-count="3">
+<div class="tl"><div><div class="cm" style="font-size:18px">{{r.name}}</div><div class="cs" style="font-size:14px">Was due {{r.was}}</div></div>
+<span style="display:flex;gap:12px;align-items:center"><span class="cs" style="font-size:14px">{{r.next}}</span><span class="seg"><button class="tbtn {{r.noCls}}" style="min-width:110px" onClick="{{r.setNo}}">Not changed</button><button class="tbtn {{r.yesCls}}" style="min-width:110px" onClick="{{r.setYes}}">Replaced</button></span></span></div>
+</template>
+</div>
+<div style="display:flex;justify-content:space-between;margin-top:16px"><a class="tbtn sec" href="T-Asset.dc.html">Back</a><a class="tbtn" href="T-Checklist.dc.html">Next: test readings</a></div>
+</div>
+</div>
+</template>
+<div id="dc-root"></div>
+<a class="dc-back" href="index.html" title="All screens">All screens</a>
+<style>.dc-back{position:fixed;right:14px;bottom:14px;z-index:999;background:#0f1b2d;color:#fff;font:600 12px/1 Inter,system-ui,sans-serif;padding:9px 12px;border-radius:8px;text-decoration:none;opacity:.85}.dc-back:hover{opacity:1}</style>
+
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1024,"height":768}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { picks: { 0: true, 1: false, 2: false } }; }
+renderVals() {
+const items = [['Battery (5 yr)', '12/03/2021', 'New due 03/11/2031'], ['Adult pads (5 yr)', '12/03/2021', 'New due 03/11/2031'], ['Paediatric pads (2 yr)', '12/03/2024', 'New due 03/11/2028']];
+const p = this.state.picks;
+return {
+rows: items.map((it, i) => ({
+name: it[0], was: it[1], next: p[i] ? it[2] : 'No change',
+yesCls: p[i] ? '' : 'sec', noCls: p[i] ? 'sec' : '',
+setYes: () => this.setState({ picks: Object.assign({}, p, { [i]: true }) }),
+setNo: () => this.setState({ picks: Object.assign({}, p, { [i]: false }) })
+}))
+};
+}
+}
+</script>
+</body>
+</html>

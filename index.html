@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AEDS Stage 1 UI v2</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{--ink:#0f1b2d;--t3:#5a6a7f;--line:#dfe5ee;--bg:#f4f7fb;--p7:#0b4ea2;--p0:#eef4fc}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif}
+main{max-width:1080px;margin:0 auto;padding:40px 16px 64px}
+h1{font-size:28px;margin:0 0 6px} p.lead{color:var(--t3);margin:0 0 28px}
+section{margin-bottom:28px} h2{font-size:16px;margin:0 0 10px} h2 small{color:var(--t3);font-weight:500}
+ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+a{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--ink);text-decoration:none;min-height:44px;box-sizing:border-box}
+a:hover{border-color:var(--p7);background:var(--p0)} .t{font-weight:600;font-size:14px} .s{color:var(--t3);font-size:12px;white-space:nowrap}
+</style>
+</head>
+<body>
+<main>
+<h1>AEDS Stage 1 UI v2</h1>
+<p class="lead">Interactive UI screens. Open a screen, then use its buttons, tabs and menus. "All screens" at the bottom right returns here.</p>
+<section><h2>Staff app (desktop) <small>21</small></h2><ul><li><a href="Login.dc.html"><span class="t">A0 Staff sign-in</span><span class="s">1280×800</span></a></li>
+<li><a href="Main.dc.html"><span class="t">A1 Dashboard</span><span class="s">1280×940</span></a></li>
+<li><a href="Customers.dc.html"><span class="t">A2 Customers</span><span class="s">1280×940</span></a></li>
+<li><a href="Customer-New.dc.html"><span class="t">A2b New customer</span><span class="s">1280×1000</span></a></li>
+<li><a href="Customer.dc.html"><span class="t">A3 Customer detail</span><span class="s">1280×940</span></a></li>
+<li><a href="Sites.dc.html"><span class="t">A4 Sites</span><span class="s">1280×940</span></a></li>
+<li><a href="Site-New.dc.html"><span class="t">A4b New site</span><span class="s">1280×1000</span></a></li>
+<li><a href="Site.dc.html"><span class="t">A5 Site detail</span><span class="s">1280×940</span></a></li>
+<li><a href="Contacts.dc.html"><span class="t">A6 Contacts</span><span class="s">1280×940</span></a></li>
+<li><a href="Contact-New.dc.html"><span class="t">A6b New contact</span><span class="s">1280×1000</span></a></li>
+<li><a href="Contact.dc.html"><span class="t">A7 Contact detail</span><span class="s">1280×940</span></a></li>
+<li><a href="Assets.dc.html"><span class="t">A8 Assets</span><span class="s">1280×940</span></a></li>
+<li><a href="Asset-New.dc.html"><span class="t">A8b New asset</span><span class="s">1280×1000</span></a></li>
+<li><a href="Asset.dc.html"><span class="t">A9 Asset detail</span><span class="s">1280×940</span></a></li>
+<li><a href="Compliance.dc.html"><span class="t">A10 Compliance (due list)</span><span class="s">1280×1100</span></a></li>
+<li><a href="Merge.dc.html"><span class="t">A12 Site transfers</span><span class="s">1280×940</span></a></li>
+<li><a href="Reports.dc.html"><span class="t">A13 Reports</span><span class="s">1280×940</span></a></li>
+<li><a href="Audit.dc.html"><span class="t">A14 Audit log</span><span class="s">1280×940</span></a></li>
+<li><a href="Models.dc.html"><span class="t">A15 Asset settings</span><span class="s">1280×1060</span></a></li>
+<li><a href="People.dc.html"><span class="t">A15b People (users and roles)</span><span class="s">1280×1000</span></a></li>
+<li><a href="Visit.dc.html"><span class="t">A16 Service visit</span><span class="s">1280×940</span></a></li></ul></section><section><h2>Technician (tablet) <small>9</small></h2><ul><li><a href="T-Signin.dc.html"><span class="t">T1 Sign-in</span><span class="s">1024×768</span></a></li>
+<li><a href="T-Today.dc.html"><span class="t">T2 Find site or AED</span><span class="s">1024×768</span></a></li>
+<li><a href="T-Asset.dc.html"><span class="t">T3 Asset</span><span class="s">1024×768</span></a></li>
+<li><a href="T-Parts.dc.html"><span class="t">T4 Visit: parts</span><span class="s">1024×768</span></a></li>
+<li><a href="T-Checklist.dc.html"><span class="t">T5 Visit: test readings</span><span class="s">1024×768</span></a></li>
+<li><a href="T-Photos.dc.html"><span class="t">T6 Visit: photos</span><span class="s">1024×768</span></a></li>
+<li><a href="T-Summary.dc.html"><span class="t">T7 Visit: summary</span><span class="s">1024×768</span></a></li>
+<li><a href="T-Add.dc.html"><span class="t">T8 Add an AED</span><span class="s">1024×768</span></a></li>
+<li><a href="T-Remove.dc.html"><span class="t">T9 Remove or replace</span><span class="s">1024×768</span></a></li></ul></section><section><h2>Customer portal <small>7</small></h2><ul><li><a href="P-Login.dc.html"><span class="t">P1 Sign-in</span><span class="s">1280×800</span></a></li>
+<li><a href="P-Forgot.dc.html"><span class="t">P1b Forgot password</span><span class="s">1280×800</span></a></li>
+<li><a href="P-Accept.dc.html"><span class="t">P2 Accept invite</span><span class="s">1280×800</span></a></li>
+<li><a href="P-Assets.dc.html"><span class="t">P3 My assets</span><span class="s">1280×800</span></a></li>
+<li><a href="P-Asset.dc.html"><span class="t">P4 Asset</span><span class="s">1280×900</span></a></li>
+<li><a href="P-Reports.dc.html"><span class="t">P5 Reports</span><span class="s">1280×800</span></a></li>
+<li><a href="P-Users.dc.html"><span class="t">P6 Account</span><span class="s">1280×800</span></a></li></ul></section>
+</main>
+</body>
+</html>

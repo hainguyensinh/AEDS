@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Asset, technician view</title>
+<script src="react-vendor.js"></script>
+<script src="dc-lite.js"></script>
+<link rel="stylesheet" href="ds.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>body{margin:0;font-family:Inter,system-ui,sans-serif}</style>
+
+</head>
+<body>
+<template id="dc-tpl">
+
+<div class="tpage">
+<div class="tbar"><a href="T-Today.dc.html">&lt; Find</a><span>Sample Site 07</span><span class="steps"><span class="on">Asset</span><span>Parts</span><span>Tests</span><span>Photos</span><span>Summary</span></span></div>
+<div class="tbody">
+<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:16px">
+<div class="tc"><div class="th" style="margin-bottom:4px">Defibrillator 01</div>
+<p class="sub" style="font-size:15px;margin-bottom:14px">Serial SAMPLE-0001 · Main foyer</p>
+<dl class="kv2" style="font-size:16px"><dt>Model</dt><dd>Sample Model X</dd><dt>Battery</dt><dd>Due 12/03/2021 <span class="tag bd2">Past due</span></dd><dt>Adult pads</dt><dd>Due 12/03/2021 <span class="tag bd2">Past due</span></dd><dt>Last service</dt><dd>28/11/2025</dd></dl>
+<div class="banner" style="margin-top:14px">These past-due dates come from the old system and are unverified. Confirm during this visit.</div></div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div class="tc"><div class="cm" style="margin-bottom:10px">Access</div><p style="margin-bottom:10px">Check in at reception. Cabinet is in the main foyer.</p>
+<div class="lock" style="font-size:15px">Keypad code <b style="margin-left:auto;letter-spacing:.2em">{{code}}</b></div>
+<button class="tbtn sec" style="width:100%;margin-top:10px" onClick="{{rev}}">{{revLabel}}</button></div>
+<div class="tc"><div class="cm" style="margin-bottom:6px">Other assets here</div><div class="li"><span>Cabinet 01</span><span class="tag ok">OK</span></div><div class="li"><span>Monitoring 01</span><span class="tag ok">OK</span></div></div>
+</div></div>
+<div style="display:flex;justify-content:flex-end;gap:12px;margin-top:16px"><a class="tbtn sec" href="T-Remove.dc.html">Mark removed or replaced</a>&nbsp;&nbsp;<a class="tbtn" href="T-Parts.dc.html">Record service</a></div>
+</div>
+</div>
+</template>
+<div id="dc-root"></div>
+<a class="dc-back" href="index.html" title="All screens">All screens</a>
+<style>.dc-back{position:fixed;right:14px;bottom:14px;z-index:999;background:#0f1b2d;color:#fff;font:600 12px/1 Inter,system-ui,sans-serif;padding:9px 12px;border-radius:8px;text-decoration:none;opacity:.85}.dc-back:hover{opacity:1}</style>
+
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1024,"height":768}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { r: false }; }
+renderVals() {
+return {
+code: this.state.r ? '4821' : '••••••', revLabel: this.state.r ? 'Hide code' : 'Reveal code (logged)', rev: () => this.setState({ r: !this.state.r }),};
+}
+}
+</script>
+</body>
+</html>
