@@ -34,7 +34,7 @@
 <main class="main">
 <div class="top"><label class="search"><input aria-label="Search" placeholder="Search customers, sites, serial numbers"><span class="kbd">/</span></label><span class="role">Role: Administrator</span></div>
 <div class="ph"><div class="phl"><a class="back" href="Assets.dc.html" aria-label="Back" title="Back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a><div><div class="crumb"><a href="Assets.dc.html">Assets</a> / <a href="Site.dc.html">Sample Site 07</a> / Defibrillator 01</div><div class="h1">Defibrillator 01</div><div class="sub">Serial SAMPLE-0001 · <a href="Site.dc.html">Sample Site 07</a> · <span class="tag bd2">Past due, unverified</span></div></div></div>
-<div class="acts"><span class="opt"><span class="b" tabindex="0" style="height:38px">Options</span><span class="mn"><button onClick="{{o_transfer}}">Transfer to another site</button><button onClick="{{o_copy}}">Copy asset</button><button onClick="{{o_archive}}">Archive asset</button></span></span><button class="btn sec" onClick="{{o_verify}}">Verify dates</button><button class="btn" onClick="{{o_record}}">Record service</button></div></div>
+<div class="acts"><span class="opt"><span class="b" tabindex="0" style="height:38px">Options</span><span class="mn"><button onClick="{{o_transfer}}">Transfer to another site</button><button onClick="{{o_copy}}">Copy asset</button><button onClick="{{o_archive}}">Archive asset</button></span></span></div></div>
 
 <div class="tabs">
 <template data-sc="for" list="{{tabs}}" as="t" hint-placeholder-count="5"><button class="tab {{t.cls}}" onClick="{{t.pick}}">{{t.label}}</button></template>
@@ -64,7 +64,7 @@
 </template>
 
 <template data-sc="if" value="{{isLevels}}" hint-placeholder-val="{{ false }}">
-<div class="card"><div class="ch">Pads and batteries <span>Due soon = within 90 days (P4)</span></div>
+<div class="card"><div class="ch">Pads and batteries <span>Due soon = within 90 days (P4) <button class="btn sec sm" style="margin-left:10px" onClick="{{o_verify}}">Verify dates</button></span></div>
 <div class="fg" style="grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:16px"><div class="f"><label for="sl0">Installed (start date)</label><input id="sl0" class="fi" value="10/08/2022"></div><div class="f"><label>AED status</label><div><span class="tag {{aedCls}}">{{aedStatus}}</span></div></div></div>
 <div class="f" style="margin-bottom:6px"><label for="sl1">Fit a new part</label><div style="display:flex;gap:12px;max-width:720px"><select id="sl1" class="fi" style="flex:1"><option>None selected</option><option>Adult pad - 5 years</option><option>Adult pad - 2 years</option><option>Paediatric pad - 2 years</option><option>Multi-function pad - 4.5 years</option><option>Battery - 5 Years</option><option>Battery - 4 Years</option></select><input class="fi" style="width:160px" placeholder="Fitted date" aria-label="Fitted date"><button class="btn" onClick="{{addLevel}}">Fit part</button></div><div class="hint">Expiry is set from the part's lifespan. Fitting a part of the same kind retires the current one; nothing is overwritten.</div></div>
 <div class="tw" style="margin-top:12px"><table class="tbl"><thead><tr><th>Current part (service level)</th><th class="r">Years</th><th class="r">Months</th><th>Fitted</th><th>Expiry date</th><th>Date checked</th><th>Status</th><th></th></tr></thead><tbody>
@@ -78,7 +78,7 @@
 </template>
 
 <template data-sc="if" value="{{isTests}}" hint-placeholder-val="{{ false }}">
-<div class="card"><div class="ch">Service history</div>
+<div class="card"><div class="ch">Service history <span><button class="btn sm" onClick="{{o_record}}">Record service</button></span></div>
 <div class="tw"><table class="tbl mx"><thead><tr><th>Visit</th><th>Technician</th><th>AIVIA status</th><th>AED status</th><th>Shock tested</th><th>Base plate</th><th>Optical sensor</th><th>Result</th></tr></thead><tbody>
 <tr><td>28/11/2025</td><td><a href="Visit.dc.html">Sample Technician</a></td><td>Pass</td><td>Pass</td><td>Pass</td><td>Pass</td><td>Pass</td><td><span class="tag ok">Passed</span></td></tr>
 <tr><td>28/11/2024</td><td><a href="Visit.dc.html">Sample Technician</a></td><td>Pass</td><td>Fail</td><td>Pass</td><td>Pass</td><td>Pass</td><td><span class="tag wn">Action taken</span></td></tr>
