@@ -28,7 +28,6 @@
 <a class="nv" href="Audit.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Audit log</a>
 <a class="nv" href="People.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.9.3 5.5 2.2 5.5 5.8"/></svg>People</a>
 <a class="nv" href="Models.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>Asset settings</a>
-<a class="nv" href="Merge.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v6a4 4 0 004 4h8M18 14l-3-3M18 14l-3 3M6 20V14"/></svg>Site transfers</a>
 <div class="who"><span class="av">AD</span><div>Sample Admin<small>Administrator</small></div></div>
 </nav>
 <main class="main">
@@ -38,6 +37,8 @@
 <div class="azl"><template data-sc="for" list="{{letters}}" as="l" hint-placeholder-count="28"><button class="{{l.cls}}" onClick="{{l.pick}}">{{l.label}}</button></template></div>
 <div class="sbx"><div class="grpin"><input aria-label="Search sites" placeholder="Search by site name, address or ID"><button>Search</button></div>
 <button class="btnl" onClick="{{toggleAdv}}">{{advLabel}}</button><button class="btnl" onClick="{{openSave}}">Save search</button><button class="btnl" onClick="{{openCols}}">Modify table view</button></div>
+<div class="tb" style="margin:8px 0"><button class="chip {{unAll}}" onClick="{{unOff}}">All sites</button><button class="chip {{unOn}}" onClick="{{unOnF}}">Unassigned (279)</button></div>
+<template data-sc="if" value="{{isUn}}" hint-placeholder-val="{{ false }}"><div class="banner" style="margin-bottom:10px">Sites with no customer, loaded under "Unassigned" (decision D3). Select sites and use Transfer to customer, or open a site and use Options › Transfer to another customer.</div></template>
 <template data-sc="if" value="{{adv}}" hint-placeholder-val="{{ false }}">
 <div class="panel"><div class="fg c4">
 <div class="f"><label for="a1">Customer</label><input id="a1" class="fi" placeholder="Search customers"></div>
@@ -59,6 +60,7 @@
 <template data-sc="for" list="{{rows}}" as="r" hint-placeholder-count="6"><div class="dr {{r.sel}}"><div class="dc"><button class="opt2" onClick="{{r.toggle}}" aria-label="Select row"><span class="cbx {{r.on}}">✓</span></button></div><div class="dc"><a class="cm" href="Site.dc.html">{{r.name}}</a></div><template data-sc="for" list="{{r.cells}}" as="c" hint-placeholder-count="8"><div class="dc {{c.al}}"><span class="{{c.cls}}">{{c.v}}</span></div></template><div class="dc r"><span class="opt"><span class="b" tabindex="0">Options</span><span class="mn"><a href="Site.dc.html">Edit site details</a>
 <button onClick="{{o_map}}">Map site</button>
 <button onClick="{{o_merge}}">Merge site</button>
+<button onClick="{{o_transfer}}">Transfer to another customer</button>
 <div class="sep"></div>
 <button onClick="{{o_archive}}">Archive site</button>
 <button class="dng" onClick="{{o_del}}">Delete site</button></span></span></div></div></template>
@@ -96,6 +98,7 @@ renderVals() {
 const st = this.state;
 const C = [["id", "Site ID", ""], ["addr", "Site address", ""], ["sub", "Site suburb", ""], ["state", "Site state", ""], ["pc", "Site postcode", ""], ["cust", "Customer", ""], ["contact", "Primary contact", ""], ["assets", "AEDs", "r"], ["comp", "Compliance", ""]];
 const D = [{"name": "Sample Site 01", "id": "2219", "addr": "1 Sample Road", "sub": "Broadmeadow", "state": "NSW", "pc": "2292", "cust": "Sample Client A", "contact": "Sample Contact 01", "assets": "3", "comp": "OK", "compc": "ok"}, {"name": "Sample Site 02", "id": "6086", "addr": "PO Box 2188", "sub": "Rockingham DC", "state": "WA", "pc": "6967", "cust": "Sample Client B", "contact": "None", "assets": "1", "comp": "Due soon", "compc": "wn"}, {"name": "Sample Site 03", "id": "654", "addr": "3 Sample Road", "sub": "Parkville", "state": "VIC", "pc": "3052", "cust": "Sample Client C", "contact": "Sample Contact 03", "assets": "2", "comp": "Expired, unverified", "compc": "bd2"}, {"name": "Sample Site 04", "id": "6262", "addr": "4 Sample Street", "sub": "Leichhardt", "state": "NSW", "pc": "2040", "cust": "Sample Client A", "contact": "Sample Contact 04", "assets": "4", "comp": "OK", "compc": "ok"}, {"name": "Sample Site 05", "id": "2163", "addr": "5 Sample Way", "sub": "Mullaley", "state": "NSW", "pc": "2379", "cust": "Unassigned", "contact": "None", "assets": "1", "comp": "Expired, unverified", "compc": "bd2"}, {"name": "Sample Site 06", "id": "386", "addr": "6 Sample Road", "sub": "Gregory Hills", "state": "NSW", "pc": "2557", "cust": "Sample Client D", "contact": "None", "assets": "0", "comp": "No AEDs", "compc": "nt"}];
+const DV = st.un ? D.filter((r) => r.cust === 'Unassigned') : D;
 const vis = C.filter((c) => st.cols.indexOf(c[0]) >= 0);
 const selIds = Object.keys(st.sel).filter((k) => st.sel[k]);
 const set = (o) => this.setState(o);
@@ -104,12 +107,13 @@ const L = ['#'].concat('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')).concat(['All']);
 const open = (k) => () => set({ dlg: k });
 const done = (msg, extra) => () => set(Object.assign({ dlg: '', toast: msg }, extra || {}));
 return {
+unAll: st.un ? '' : 'on', unOn: st.un ? 'on' : '', isUn: !!st.un, unOff: () => set({ un: false, sel: {} }), unOnF: () => set({ un: true, sel: {} }),
 advLabel: st.adv ? 'Hide advanced' : 'Advanced', adv: st.adv, toggleAdv: () => set({ adv: !st.adv }),
 letters: L.map((l) => ({ label: l, cls: st.letter === l ? 'on' : '', pick: () => set({ letter: l }) })),
 cols: vis.map((c) => ({ label: c[1], al: c[2] })), colCount: vis.length,
-rows: D.map((r) => ({ name: r.name, on: st.sel[r.id] ? 'on' : '', sel: st.sel[r.id] ? 'sel' : '', toggle: () => toggleSel(r.id),
+rows: DV.map((r) => ({ name: r.name, on: st.sel[r.id] ? 'on' : '', sel: st.sel[r.id] ? 'sel' : '', toggle: () => toggleSel(r.id),
   cells: vis.map((c) => ({ v: r[c[0]], cls: c[0] === 'comp' ? 'tag ' + r.compc : (c[0] === 'email' && r[c[0]] ? 'em' : ''), al: c[2] })) })),
-shown: D.length,
+shown: DV.length,
 allOn: D.every((r) => st.sel[r.id]) ? 'on' : '',
 toggleAll: () => { const all = D.every((r) => st.sel[r.id]); const n = {}; if (!all) D.forEach((r) => { n[r.id] = true; }); set({ sel: n }); },
 hasSel: selIds.length > 0, selCount: selIds.length, clearSel: () => set({ sel: {} }),

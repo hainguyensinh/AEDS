@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="ds.css">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<style>body{margin:0;font-family:Inter,system-ui,sans-serif}</style>
+<style>body{margin:0;font-family:Inter,system-ui,sans-serif}.ib{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid #d5dbe5;border-radius:8px;background:#fff;color:#0b4a8f;cursor:pointer;margin-left:6px}.ib:hover{background:#eef4fb;border-color:#9fbbe0}.ib.dg{color:#b42318}.ib.dg:hover{background:#fef3f2;border-color:#f3b8b2}.ib[disabled]{opacity:.35;cursor:not-allowed}.ibt{display:inline-flex;align-items:center;gap:6px}.ck{width:20px;height:20px;border:1.5px solid #b8c2d1;border-radius:5px;background:#fff;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;vertical-align:middle}.ck svg{stroke:transparent}.ck.on{background:#0b4a8f;border-color:#0b4a8f}.ck.on svg{stroke:#fff}.ck.lk{cursor:not-allowed;opacity:.5}.ck.lk.on{background:#6b7f99;border-color:#6b7f99}.na{color:#9aa6b6}.pm td,.pm th{text-align:center}.pm td:first-child,.pm th:first-child{text-align:left}.grp td{background:#f6f8fb;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#5b6b80}.bi{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:#5b6b80;background:#eef1f5;border-radius:999px;padding:2px 8px}.yes{color:#0b7a4b;font-weight:600}</style>
 
 </head>
 <body>
@@ -28,7 +28,6 @@
 <a class="nv" href="Audit.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Audit log</a>
 <a class="nv on" href="People.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.9.3 5.5 2.2 5.5 5.8"/></svg>People</a>
 <a class="nv" href="Models.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>Asset settings</a>
-<a class="nv" href="Merge.dc.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v6a4 4 0 004 4h8M18 14l-3-3M18 14l-3 3M6 20V14"/></svg>Site transfers</a>
 <div class="who"><span class="av">AD</span><div>Sample Admin<small>Administrator</small></div></div>
 </nav>
 <main class="main">
@@ -51,25 +50,20 @@
 </tbody></table></div>
 <div class="banner" style="margin-top:14px">A portal user belongs to exactly one customer. A staff user belongs to none. Deactivating a user ends their sessions at once.</div>
 </template>
-<template data-sc="if" value="{{is_roles}}" hint-placeholder-val="{{ false }}"><div style="font-size:18px;font-weight:700">Roles and permissions</div><div class="sub" style="margin-bottom:14px">What each role can do. Portal users only see their own customer.</div>
-<div class="tw"><div style="overflow-x:auto"><table class="tbl mx"><thead><tr><th>Capability</th><th>Admin</th><th>Office staff</th><th>Technician</th><th>Portal user</th></tr></thead><tbody>
-<tr><td>Clients, sites, contacts: view</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Own only</td></tr>
-<tr><td>Clients, sites, contacts: create and edit</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
-<tr><td>Archive a client</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
-<tr><td>Reassign a site to another client</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
-<tr><td>AED and cabinet register: view</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Own only</td></tr>
-<tr><td>AED and cabinet register: create and edit</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
-<tr><td>Monitoring and SIM details</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
-<tr><td>Cabinet codes: read (logged)</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td></tr>
-<tr><td>Cabinet codes: set</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
-<tr><td>Record a service visit</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
-<tr><td>Internal and technician notes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
-<tr><td>Attachments: upload / view</td><td>Yes</td><td>Yes</td><td>Yes</td><td>View shared files only</td></tr>
-<tr><td>Reports and CSV export</td><td>Yes</td><td>Yes</td><td>Read only</td><td>Own certificates and reports</td></tr>
-<tr><td>Manage users and portal accounts</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
-<tr><td>Audit log</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
-</tbody></table></div></div>
-
+<template data-sc="if" value="{{is_roles}}" hint-placeholder-val="{{ false }}">
+<template data-sc="if" value="{{roleList}}" hint-placeholder-val="{{ true }}"><div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:14px"><div><div style="font-size:18px;font-weight:700">Roles and permissions</div><div class="sub">Each user has one role. Built-in roles can be edited but not deleted.</div></div><button class="btn ibt" onClick="{{newRole}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>New role</button></div>
+<div class="banner" style="margin-bottom:14px">Custom roles are not in the Stage 1 scope (the specification has four fixed roles). Shown here for a change request.</div>
+<div class="tw" style="margin-bottom:22px"><table class="tbl"><thead><tr><th>Role</th><th>For</th><th class="r">Users</th><th>Description</th><th></th></tr></thead><tbody><template data-sc="for" list="{{roles}}" as="r" hint-placeholder-count="4"><tr><td><button class="btnl cm" style="padding:0" onClick="{{r.edit}}">{{r.name}}</button> <template data-sc="if" value="{{r.built}}" hint-placeholder-val="{{ true }}"><span class="bi"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>Built-in</span></template></td><td><span class="tag {{r.kcls}}">{{r.kind}}</span></td><td class="r">{{r.users}}</td><td class="cs" style="max-width:340px">{{r.desc}}</td><td class="r" style="white-space:nowrap"><button class="ib" onClick="{{r.edit}}" title="Edit" aria-label="Edit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></button><button class="ib" onClick="{{r.dup}}" title="Duplicate" aria-label="Duplicate"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg></button><template data-sc="if" value="{{r.canDel}}" hint-placeholder-val="{{ false }}"><button class="ib dg" onClick="{{r.del}}" title="Delete" aria-label="Delete"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 11v6M14 11v6"/></svg></button></template><template data-sc="if" value="{{r.built}}" hint-placeholder-val="{{ true }}"><button class="ib dg" disabled title="Built-in roles can't be deleted" aria-label="Delete (not allowed)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 11v6M14 11v6"/></svg></button></template></td></tr></template></tbody></table></div>
+<div style="font-size:15px;font-weight:700;margin-bottom:8px">Compare roles</div>
+<div class="tw"><div style="overflow-x:auto"><table class="tbl pm"><thead><tr><th>Capability</th><template data-sc="for" list="{{roles}}" as="r" hint-placeholder-count="4"><th>{{r.name}}</th></template></tr></thead><tbody><template data-sc="for" list="{{cmpRows}}" as="c" hint-placeholder-count="8"><tr><td>{{c.label}}</td><template data-sc="for" list="{{c.vals}}" as="v" hint-placeholder-count="4"><td class="{{v.cls}}">{{v.t}}</td></template></tr></template></tbody></table></div></div>
+</template>
+<template data-sc="if" value="{{roleEdit}}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px"><div style="display:flex;align-items:center;gap:10px"><button class="back" onClick="{{backRoles}}" aria-label="Back to roles" title="Back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button><div><div class="crumb"><button class="btnl" style="padding:0" onClick="{{backRoles}}">Roles and permissions</button> / {{eTitle}}</div><div style="font-size:18px;font-weight:700">{{eTitle}}</div></div></div><div class="acts"><button class="btn sec" onClick="{{backRoles}}">Cancel</button><button class="btn" onClick="{{saveRole}}">Save role</button></div></div>
+<div class="card" style="margin-bottom:16px"><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;max-width:760px"><div class="f"><label for="rn"><span class="req">*</span> Role name</label><input id="rn" class="fi" value="{{eName}}" placeholder="For example Senior technician"></div><div class="f"><label>Role for</label><template data-sc="if" value="{{eBuilt}}" hint-placeholder-val="{{ false }}"><div style="padding-top:8px"><span class="tag {{eKcls}}">{{eKind}}</span> <span class="cs">fixed for a built-in role</span></div></template><template data-sc="if" value="{{eFree}}" hint-placeholder-val="{{ true }}"><div style="display:flex;gap:16px;padding-top:8px;font-size:13px"><template data-sc="for" list="{{kinds}}" as="k" hint-placeholder-count="2"><label class="chk"><template data-sc="if" value="{{k.on}}" hint-placeholder-val="{{ false }}"><input type="radio" name="rk" checked onChange="{{k.pick}}"></template><template data-sc="if" value="{{k.off}}" hint-placeholder-val="{{ true }}"><input type="radio" name="rk" onChange="{{k.pick}}"></template> {{k.l}}</label></template></div></template></div><div class="f" style="grid-column:1/-1"><label for="rd">Description</label><input id="rd" class="fi" value="{{eDesc}}"></div></div>
+<template data-sc="if" value="{{ePortal}}" hint-placeholder-val="{{ false }}"><p class="hint" style="margin-top:4px">Portal roles only ever see their own customer. Internal notes, SIM details, cabinet codes and admin areas are locked off.</p></template><template data-sc="if" value="{{eAdmin}}" hint-placeholder-val="{{ false }}"><p class="hint" style="margin-top:4px">Admin always keeps full access, so there is always someone who can manage users.</p></template></div>
+<div class="card"><div class="ch">Permissions <span><button class="btn sec sm" onClick="{{allOn}}">Select all</button> <button class="btn sec sm" onClick="{{allOff}}">Clear all</button></span></div>
+<div class="tw"><table class="tbl pm"><thead><tr><th>Area</th><th>View</th><th>Create</th><th>Edit</th><th>Delete / archive</th><th>All</th></tr></thead><tbody><template data-sc="for" list="{{mRows}}" as="m" hint-placeholder-count="10"><template data-sc="if" value="{{m.grp}}" hint-placeholder-val="{{ false }}"><tr class="grp"><td colspan="6">{{m.label}}</td></tr></template><template data-sc="if" value="{{m.row}}" hint-placeholder-val="{{ true }}"><tr><td>{{m.label}}<template data-sc="if" value="{{m.hasNote}}" hint-placeholder-val="{{ false }}"><div class="cs" style="font-size:12px">{{m.note}}</div></template></td><template data-sc="for" list="{{m.cells}}" as="c" hint-placeholder-count="4"><td><template data-sc="if" value="{{c.na}}" hint-placeholder-val="{{ false }}"><span class="na">—</span></template><template data-sc="if" value="{{c.ok}}" hint-placeholder-val="{{ true }}"><button class="ck {{c.cls}}" role="checkbox" aria-checked="{{c.aria}}" aria-label="{{c.lab}}" title="{{c.tip}}" onClick="{{c.toggle}}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></button></template></td></template><td><button class="btnl" onClick="{{m.all}}">{{m.allT}}</button></td></tr></template></template></tbody></table></div>
+<p class="hint">Delete on customers, sites and assets means archive. Changes apply to everyone with this role at their next sign-in.</p></div>
+</template>
 </template>
 </div>
 </div>
@@ -80,7 +74,7 @@
 <div class="mb"><div class="fg c2">
 <div class="f"><label for="u1">First name</label><input id="u1" class="fi" value="Sample"></div><div class="f"><label for="u2">Last name</label><input id="u2" class="fi" value="Technician"></div>
 <div class="f s2"><label for="u3">Email (sign-in)</label><input id="u3" class="fi" value="sample.tech@aeds.example"></div>
-<div class="f"><label for="u4">Role</label><select id="u4" class="fi"><option>Technician</option><option>Office staff</option><option>Admin</option></select></div>
+<div class="f"><label for="u4">Role</label><select id="u4" class="fi"><template data-sc="for" list="{{staffRoles}}" as="o" hint-placeholder-count="3"><option>{{o.n}}</option></template></select></div>
 <div class="f"><label for="u5">Status</label><select id="u5" class="fi"><option>Active</option><option>Deactivated</option></select></div>
 </div><p class="hint">An email invite is sent to set a password. Two-factor sign-in is required for staff.</p></div>
 <div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{saveDlg}}">Save user</button></div></div></div>
@@ -104,6 +98,11 @@
 </div>
 <div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" onClick="{{saveDlg}}">Save</button></div></div></div>
 </template>
+<template data-sc="if" value="{{dlgDel}}" hint-placeholder-val="{{ false }}">
+<div class="ovl"><div class="dlg mdl"><div class="mh">Delete role "{{delName}}"<button class="xb" onClick="{{closeDlg}}" aria-label="Close">×</button></div>
+<div class="mb"><template data-sc="if" value="{{delHasUsers}}" hint-placeholder-val="{{ true }}"><p style="margin-top:0">{{delUsers}} users have this role. Move them to another role first.</p><div class="f"><label for="dmv">Move users to</label><select id="dmv" class="fi"><template data-sc="for" list="{{delTargets}}" as="o" hint-placeholder-count="3"><option>{{o.n}}</option></template></select></div></template><template data-sc="if" value="{{delNoUsers}}" hint-placeholder-val="{{ false }}"><p style="margin-top:0">No users have this role.</p></template><p class="hint">The deletion is recorded in the audit log.</p></div>
+<div class="mf"><button class="btn sec" onClick="{{closeDlg}}">Cancel</button><button class="btn" style="background:#b42318;border-color:#b42318" onClick="{{confirmDel}}">Delete role</button></div></div></div>
+</template>
 <template data-sc="if" value="{{hasToast}}" hint-placeholder-val="{{ false }}"><div class="toast">{{toast}}<button onClick="{{hideToast}}">Dismiss</button></div></template>
 </div>
 </template>
@@ -113,22 +112,70 @@
 
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1100}}'>
 class Component extends DCLogic {
-constructor(props) { super(props); this.state = { s: 'users', dlg: '', toast: '' }; }
+constructor(props) { super(props);
+const P = (o) => o;
+this.state = { s: 'users', dlg: '', toast: '', re: null, draft: null, nid: 1, roles: [
+ { id: 'admin', name: 'Admin', kind: 'staff', users: 1, built: true, desc: 'AEDS managers. Everything, including users and the audit log.', p: 'ALL' },
+ { id: 'office', name: 'Office staff', kind: 'staff', users: 1, built: true, desc: 'Day-to-day records. Cannot read cabinet codes, manage users or archive customers.', p: { cust:[1,1,1,0], site:[1,1,1,0], reas:[0,0,1,0], cont:[1,1,1,0], asset:[1,1,1,0], sim:[1,0,1,0], code:[0,0,1,0], svc:[1,1,1,0], note:[1,1,1,0], file:[1,1,0,0], comp:[1,0,0,0], rep:[1,1,0,0], set:[1,0,0,0] } },
+ { id: 'tech', name: 'Technician', kind: 'staff', users: 2, built: true, desc: 'Field staff. Record service visits and parts, upload photos, read cabinet codes.', p: { cust:[1,0,0,0], site:[1,0,0,0], cont:[1,0,0,0], asset:[1,1,1,0], sim:[1,0,1,0], code:[1,0,1,0], svc:[1,1,1,0], note:[1,1,1,0], file:[1,1,0,0], comp:[1,0,0,0], rep:[1,0,0,0], set:[1,0,0,0] } },
+ { id: 'portal', name: 'Portal user', kind: 'portal', users: 2, built: true, desc: "A customer's own staff. View only, own customer only.", p: { cust:[1,0,0,0], site:[1,0,0,0], cont:[1,0,0,0], asset:[1,0,0,0], svc:[1,0,0,0], file:[1,0,0,0], comp:[1,0,0,0], rep:[1,0,0,0] } }
+] }; }
 renderVals() {
+const st = this.state; const set = (o) => this.setState(o);
+const ROWS = [
+ ['g','Customers and sites'],
+ ['cust','Customers',[1,1,1,1],[1,0,0,0]], ['site','Sites',[1,1,1,1],[1,0,0,0]], ['reas','Reassign a site to another customer',[0,0,1,0],null,'Edit = allowed to move a site'], ['cont','Contacts',[1,1,1,1],[1,0,0,0]],
+ ['g','Assets and service'],
+ ['asset','AEDs and cabinets',[1,1,1,1],[1,0,0,0]], ['sim','Monitoring and SIM details',[1,0,1,0],null], ['code','Cabinet codes',[1,0,1,0],null,'View = read a code (every read is logged), Edit = set a code'], ['svc','Service visits and test results',[1,1,1,0],[1,0,0,0]], ['note','Internal and technician notes',[1,1,1,0],null], ['file','Attachments',[1,1,0,1],[1,0,0,0],'Portal roles see shared files only'], ['comp','Compliance and due list',[1,0,0,0],[1,0,0,0]],
+ ['g','Reports and admin'],
+ ['rep','Reports and CSV export',[1,1,0,0],[1,0,0,0],'Create = export CSV. Portal roles get their own certificates and reports'], ['set','Asset settings',[1,1,1,1],null], ['user','Users, roles and portal accounts',[1,1,1,1],null], ['audit','Audit log',[1,0,0,0],null] ];
+const RR = ROWS.filter((r) => r[0] !== 'g');
+const perm = (role, k) => role.p === 'ALL' ? RR.find((r) => r[0] === k)[2].slice() : ((role.p[k]) || [0,0,0,0]).slice();
 const g1 = [['users','Users'],['roles','Roles and permissions']];
-const g2 = [];
-const cur = this.state.s; const set = (o) => this.setState(o);
-const mk = (d) => ({ label: d[1], cls: d[0] === cur ? 'on' : '', pick: () => set({ s: d[0], dlg: '' }) });
-const out = { menu1: g1.map(mk), menu2: g2.map(mk) };
-['types','levels','tests','lists','zones','notify'].forEach((k) => { out['is_' + k] = false; });
-g1.concat(g2).forEach((d) => { out['is_' + d[0]] = d[0] === cur; });
-const names = { types: 'Asset type', levels: 'Service level', tests: 'Test reading', lists: 'Cabinet model list', zones: 'Zone', notify: 'Notification' };
+const cur = st.s;
+const mk = (d) => ({ label: d[1], cls: d[0] === cur ? 'on' : '', pick: () => set({ s: d[0], dlg: '', re: null }) });
+const out = { menu1: g1.map(mk) };
+g1.forEach((d) => { out['is_' + d[0]] = d[0] === cur; });
+const roles = st.roles; const kindL = (k) => k === 'portal' ? 'Portal user' : 'Staff';
+const openEd = (r, copy) => { const p = {}; RR.forEach((x) => { p[x[0]] = perm(r, x[0]); }); set({ re: copy ? 'new' : r.id, draft: { name: copy ? 'Copy of ' + r.name : r.name, kind: r.kind, desc: r.desc, built: copy ? false : r.built, admin: !copy && r.id === 'admin', p } }); };
+out.roles = roles.map((r) => ({ name: r.name, kind: kindL(r.kind), kcls: r.kind === 'portal' ? 'nt' : 'in', users: r.users, desc: r.desc, built: !!r.built, canDel: !r.built, edit: () => openEd(r, false), dup: () => openEd(r, true), del: () => set({ dlg: 'del', delId: r.id }) }));
+const lab = ['View','Create','Edit','Delete'];
+out.cmpRows = RR.map((x) => ({ label: x[1], vals: roles.map((r) => { const v = perm(r, x[0]); const t = lab.filter((_, i) => v[i] && x[2][i]); const all = t.length && t.length === x[2].filter(Boolean).length; return { t: !t.length ? '—' : all ? 'Full' : t.join(', '), cls: !t.length ? 'na' : 'yes' }; }) }));
+out.roleList = !st.re; out.roleEdit = !!st.re;
+const d = st.draft;
+if (d) {
+ const portal = d.kind === 'portal';
+ const upd = (fn) => { const nd = Object.assign({}, d, { p: Object.assign({}, d.p) }); fn(nd); set({ draft: nd }); };
+ Object.assign(out, { eTitle: st.re === 'new' ? (d.name ? 'New role: ' + d.name : 'New role') : 'Edit role: ' + d.name, eName: d.name, eDesc: d.desc, eBuilt: !!d.built, eFree: !d.built, eKind: kindL(d.kind), eKcls: portal ? 'nt' : 'in', ePortal: portal, eAdmin: !!d.admin,
+  kinds: [['staff','Staff'],['portal','Portal user']].map((k) => ({ l: k[1], on: d.kind === k[0], off: d.kind !== k[0], pick: () => upd((nd) => { nd.kind = k[0]; if (k[0] === 'portal') RR.forEach((x) => { nd.p[x[0]] = nd.p[x[0]].map((v, i) => (x[3] && x[3][i]) ? v : 0); }); }) })),
+  mRows: ROWS.map((x) => { if (x[0] === 'g') return { grp: true, row: false, label: x[1], cells: [] };
+   const v = d.p[x[0]];
+   const allowed = (i) => x[2][i] && !(portal && !(x[3] && x[3][i]));
+   const cells = [0,1,2,3].map((i) => { const na = !x[2][i]; const locked = !na && (d.admin || !allowed(i)); const on = !!v[i] && !na;
+    return { na, ok: !na, cls: (on ? 'on' : '') + (locked ? ' lk' : ''), aria: on ? 'true' : 'false', lab: x[1] + ': ' + lab[i], tip: locked ? (d.admin ? 'Admin always has full access' : 'Never allowed for portal roles') : lab[i],
+     toggle: () => { if (locked) return; upd((nd) => { const a = nd.p[x[0]].slice(); a[i] = a[i] ? 0 : 1; if (i > 0 && a[i]) a[0] = 1; nd.p[x[0]] = a; }); } }; });
+   const can = [0,1,2,3].filter(allowed); const full = can.length && can.every((i) => v[i]);
+   return { grp: false, row: true, label: x[1], hasNote: !!x[4], note: x[4] || '', cells, allT: d.admin || !can.length ? '' : full ? 'None' : 'All',
+    all: () => { if (d.admin) return; upd((nd) => { nd.p[x[0]] = [0,1,2,3].map((i) => allowed(i) && !full ? 1 : 0); }); } }; }),
+  allOn: () => { if (d.admin) return; upd((nd) => { RR.forEach((x) => { nd.p[x[0]] = [0,1,2,3].map((i) => x[2][i] && !(portal && !(x[3] && x[3][i])) ? 1 : 0); }); }); },
+  allOff: () => { if (d.admin) return; upd((nd) => { RR.forEach((x) => { nd.p[x[0]] = [0,0,0,0]; }); }); }
+ });
+}
+out.backRoles = () => set({ re: null, draft: null });
+out.newRole = () => { const p = {}; RR.forEach((x) => { p[x[0]] = [0,0,0,0]; }); set({ re: 'new', draft: { name: '', kind: 'staff', desc: '', built: false, admin: false, p } }); };
+out.saveRole = () => { const el = document.getElementById('rn'); const ds = document.getElementById('rd'); const name = (el && el.value.trim()) || (d && d.name) || 'New role'; const desc = ds ? ds.value : ''; const p = d.admin ? 'ALL' : d.p;
+ if (st.re === 'new') set({ roles: roles.concat([{ id: 'r' + st.nid, name, kind: d.kind, users: 0, built: false, desc: desc || 'Custom role', p }]), nid: st.nid + 1, re: null, draft: null, toast: 'Role created' });
+ else set({ roles: roles.map((r) => r.id === st.re ? Object.assign({}, r, { name, desc, kind: d.kind, p }) : r), re: null, draft: null, toast: 'Role saved' }); };
+const dr = roles.find((r) => r.id === st.delId);
+Object.assign(out, { dlgDel: st.dlg === 'del' && !!dr, delName: dr ? dr.name : '', delUsers: dr ? dr.users : 0, delHasUsers: !!(dr && dr.users), delNoUsers: !!(dr && !dr.users), delTargets: dr ? roles.filter((r) => r.id !== dr.id && r.kind === dr.kind).map((r) => ({ n: r.name })) : [],
+ confirmDel: () => set({ roles: roles.filter((r) => r.id !== st.delId), dlg: '', toast: 'Role deleted' }),
+ staffRoles: roles.filter((r) => r.kind === 'staff').map((r) => ({ n: r.name })) });
 return Object.assign(out, {
 openUser: () => set({ dlg: 'user' }), openInvite: () => set({ dlg: 'invite' }), openEdit: () => set({ dlg: 'edit' }),
-dlgUser: this.state.dlg === 'user', dlgInvite: this.state.dlg === 'invite', dlgEdit: this.state.dlg === 'edit',
-editTitle: names[cur] || 'Edit', closeDlg: () => set({ dlg: '' }),
-saveDlg: () => set({ dlg: '', toast: this.state.dlg === 'invite' ? 'Invite sent' : 'Saved' }),
-hasToast: !!this.state.toast, toast: this.state.toast, hideToast: () => set({ toast: '' })
+dlgUser: st.dlg === 'user', dlgInvite: st.dlg === 'invite', dlgEdit: false, is_levels: false, is_tests: false, is_types: false, is_lists: false, is_zones: false, is_notify: false,
+editTitle: 'Edit', closeDlg: () => set({ dlg: '' }),
+saveDlg: () => set({ dlg: '', toast: st.dlg === 'invite' ? 'Invite sent' : 'Saved' }),
+hasToast: !!st.toast, toast: st.toast, hideToast: () => set({ toast: '' })
 });
 }
 }
