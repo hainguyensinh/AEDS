@@ -17,15 +17,15 @@
 <div class="tpage">
 <div class="tbar"><a href="T-Asset.dc.html">&lt; Asset</a><span>Defibrillator 01</span><span class="steps"><span>Asset</span><span class="on">Parts</span><span>Tests</span><span>Photos</span><span>Summary</span></span></div>
 <div class="tbody">
-<div class="th" style="margin-bottom:4px">Parts replaced</div>
+<div class="th" style="margin-bottom:4px">Parts Replaced</div>
 <p class="sub" style="font-size:15px;margin-bottom:16px">Tap Replaced for each item you changed. New due dates are set from the service interval.</p>
 <div class="tc">
 <template data-sc="for" list="{{rows}}" as="r" hint-placeholder-count="3">
 <div class="tl"><div><div class="cm" style="font-size:18px">{{r.name}}</div><div class="cs" style="font-size:14px">Was due {{r.was}}</div></div>
-<span style="display:flex;gap:12px;align-items:center"><span class="cs" style="font-size:14px">{{r.next}}</span><span class="seg"><button class="tbtn {{r.noCls}}" style="min-width:110px" onClick="{{r.setNo}}">Not changed</button><button class="tbtn {{r.yesCls}}" style="min-width:110px" onClick="{{r.setYes}}">Replaced</button></span></span></div>
+<span style="display:flex;gap:12px;align-items:center"><span class="cs" style="font-size:14px">{{r.next}}</span><span class="seg"><button class="tbtn {{r.noCls}}" style="min-width:110px" onClick="{{r.setNo}}">Not Changed</button><button class="tbtn {{r.yesCls}}" style="min-width:110px" onClick="{{r.setYes}}">Replaced</button></span></span></div>
 </template>
 </div>
-<div style="display:flex;justify-content:space-between;margin-top:16px"><a class="tbtn sec" href="T-Asset.dc.html">Back</a><a class="tbtn" href="T-Checklist.dc.html">Next: test readings</a></div>
+<div style="display:flex;justify-content:space-between;margin-top:16px"><a class="tbtn sec" href="T-Asset.dc.html">Back</a><a class="tbtn" href="T-Checklist.dc.html">Next: Test Readings</a></div>
 </div>
 </div>
 </template>
